@@ -1,4 +1,4 @@
-module counter(
+module COUNTER(
 	input clk,
 	input reset,
 	input count_up,

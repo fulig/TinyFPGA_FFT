@@ -14,7 +14,8 @@ module top
     
 );
 
-reg [13:0] data_test;
+reg [7:0] data_test;
+wire dv2count;
 
 ADC_SPI adc_spi 
     (
@@ -22,14 +23,20 @@ ADC_SPI adc_spi
         .CS(PIN_7),
         .SCLK(PIN_2),
         .DATA_IN(PIN_9),
-        .DV(PIN_1),
-        .DATA_OUT(data_test[13:0])
+        .DV(dv2count),
+        .DATA_OUT()
         );
 
+COUNTER counter
+(
+    .clk(PIN_2),
+    .count_up(dv2count), 
+    .out(data_test[7:0])
+    );
 begin 
 end
 assign PIN_14 = data_test[0];
 assign PIN_15 = data_test[1];
-assign PIN_16 = data_test[12];
-assign PIN_17 = data_test[13];
+assign PIN_16 = data_test[2];
+assign PIN_17 = data_test[3];
 endmodule
