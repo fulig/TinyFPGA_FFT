@@ -16,6 +16,23 @@ module top
 
 reg [7:0] data_test;
 wire dv2count;
+wire [15:0]adc_data;
+wire [7:0]addr_count;
+
+SB_RAM40_4K ram_inst (
+.RDATA(),
+.RADDR(),
+.RCLK(),
+.RCLKE(),
+.RE(),
+.WADDR(addr_count[7:0]),
+.WCLK(CLK),
+.WCLKE(dv2count),
+.WDATA(adc_data[15:0]),
+.WE(dv2count),
+.MASK()
+);
+
 
 ADC_SPI adc_spi 
     (
@@ -24,19 +41,20 @@ ADC_SPI adc_spi
         .SCLK(PIN_2),
         .DATA_IN(PIN_9),
         .DV(dv2count),
-        .DATA_OUT()
+        .DATA_OUT(adc_data[15:0])
         );
 
 COUNTER counter
 (
-    .clk(PIN_2),
+    .clk(CLK),
     .count_up(dv2count), 
-    .out(data_test[7:0])
+    .out(addr_count[7:0])
     );
 begin 
 end
-assign PIN_14 = data_test[0];
-assign PIN_15 = data_test[1];
-assign PIN_16 = data_test[2];
-assign PIN_17 = data_test[3];
+assign PIN_1 = dv2count;
+assign PIN_14 = addr_count[0];
+assign PIN_15 = addr_count[1];
+assign PIN_16 = addr_count[2];
+assign PIN_17 = addr_count[3];
 endmodule
