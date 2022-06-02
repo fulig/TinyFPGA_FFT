@@ -25,6 +25,8 @@ reg [15:0] out_7;
 wire data_valid;
 wire [15:0]adc_data;
 wire [15:0]test_out;
+wire [15:0]pos2neg;
+
 
 ADC_SPI adc_spi 
     (
@@ -51,11 +53,23 @@ shift_16Bit shift_1
     .out_7(out_7)
     );
 
+pos_2_neg pos_0
+(
+    .pos(out_4),
+    .neg(pos2neg)
+    );
+
+N_bit_adder adder_0
+(
+    .input1(out_0), 
+    .input2(pos2neg), 
+    .answer(test_out)
+    );
 
 assign PIN_1 = data_valid;
 assign PIN_14 = adc_data[15];
-assign PIN_15 = out_0[15];
-assign PIN_16 = out_1[15];
-assign PIN_17 = out_2[15];
+assign PIN_15 = test_out[15];
+assign PIN_16 = test_out[14];
+assign PIN_17 = test_out[13];
 
 endmodule

@@ -1,5 +1,5 @@
 // look in pins.pcf for all the pin names on the TinyFPGA BX board
-module ADC_SPI #(parameter CLKS_PER_HALF_BIT = 4)
+module ADC_SPI #(parameter CLKS_PER_HALF_BIT = 2)
     (
     input CLOCK,        // FPGA Clock
     input DATA_IN,         // Data input
