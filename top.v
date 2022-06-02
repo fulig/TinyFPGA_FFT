@@ -54,8 +54,8 @@ shift_16Bit shift_1
 
 assign PIN_1 = data_valid;
 assign PIN_14 = adc_data[15];
-assign PIN_15 = adc_data[14];
-assign PIN_16 = adc_data[13];
-assign PIN_17 = adc_data[12];
+assign PIN_15 = out_0[15];
+assign PIN_16 = out_1[15];
+assign PIN_17 = out_2[15];
 
 endmodule

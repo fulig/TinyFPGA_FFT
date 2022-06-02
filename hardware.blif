@@ -7,37 +7,37 @@
 .names $true
 1
 .names $undef
-.gate SB_LUT4 I0=$abc$415$n31_1 I1=$abc$415$n32 I2=adc_spi.count[7] I3=adc_spi.count[4] O=$abc$415$n12
+.gate SB_LUT4 I0=$abc$508$n31_1 I1=$abc$508$n32 I2=adc_spi.count[7] I3=adc_spi.count[4] O=$abc$508$n12
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0111111111111111
-.gate SB_LUT4 I0=adc_spi.count[2] I1=adc_spi.count[3] I2=adc_spi.count[5] I3=$false O=$abc$415$n31_1
+.gate SB_LUT4 I0=adc_spi.count[2] I1=adc_spi.count[3] I2=adc_spi.count[5] I3=$false O=$abc$508$n31_1
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00000001
-.gate SB_LUT4 I0=adc_spi.count[6] I1=adc_spi.count[8] I2=adc_spi.count[0] I3=adc_spi.count[1] O=$abc$415$n32
+.gate SB_LUT4 I0=adc_spi.count[6] I1=adc_spi.count[8] I2=adc_spi.count[0] I3=adc_spi.count[1] O=$abc$508$n32
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=$abc$415$n31_1 I1=$abc$415$n32 I2=adc_spi.count[4] I3=$false O=$abc$415$n26
+.gate SB_LUT4 I0=$abc$508$n31_1 I1=$abc$508$n32 I2=adc_spi.count[4] I3=$false O=$abc$508$n26
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10000000
-.gate SB_LUT4 I0=$abc$415$n31_1 I1=$abc$415$n32 I2=adc_spi.count[7] I3=adc_spi.count[4] O=$abc$415$n33
+.gate SB_LUT4 I0=$abc$508$n31_1 I1=$abc$508$n32 I2=adc_spi.count[7] I3=adc_spi.count[4] O=$abc$508$n33
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0111111100000000
-.gate SB_LUT4 I0=adc_spi.count[4] I1=$abc$415$n32 I2=$abc$415$n31_1 I3=adc_spi.count[7] O=$abc$415$n37
+.gate SB_LUT4 I0=adc_spi.count[4] I1=$abc$508$n32 I2=$abc$508$n31_1 I3=adc_spi.count[7] O=$abc$508$n37
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0111111100000000
-.gate SB_LUT4 I0=adc_spi.count[7] I1=adc_spi.count[4] I2=$abc$415$n31_1 I3=$abc$415$n32 O=$abc$415$n46
+.gate SB_LUT4 I0=adc_spi.count[7] I1=adc_spi.count[4] I2=$abc$508$n31_1 I3=$abc$508$n32 O=$abc$508$n46
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001000000000000
-.gate SB_LUT4 I0=adc_spi.count[0] I1=adc_spi.count[1] I2=$false I3=$false O=$abc$415$n49
+.gate SB_LUT4 I0=adc_spi.count[0] I1=adc_spi.count[1] I2=$false I3=$false O=$abc$508$n49
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0110
-.gate SB_LUT4 I0=adc_spi.count[0] I1=adc_spi.count[1] I2=$false I3=$false O=$abc$415$n51
+.gate SB_LUT4 I0=adc_spi.count[0] I1=adc_spi.count[1] I2=$false I3=$false O=$abc$508$n51
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0001
-.gate SB_LUT4 I0=$abc$415$n0 I1=$false I2=$false I3=$false O=adc_spi.SCLK
+.gate SB_LUT4 I0=$abc$508$n0 I1=$false I2=$false I3=$false O=adc_spi.SCLK
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=$abc$415$n2 I1=$false I2=$false I3=$false O=PIN_7
+.gate SB_LUT4 I0=$abc$508$n2 I1=$false I2=$false I3=$false O=PIN_7
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
 .gate SB_LUT4 I0=$false I1=$true I2=adc_spi.count[0] I3=$false O=$techmap\adc_spi.$0\count[8:0][0]
@@ -55,10 +55,10 @@
 .param LUT_INIT 0110100110010110
 .gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$84.C[3] CO=$auto$alumacc.cc:474:replace_alu$84.C[4] I0=$false I1=adc_spi.count[3]
 .attr src "top.v:29|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$415$n33 I3=$auto$alumacc.cc:474:replace_alu$84.C[4] O=$techmap\adc_spi.$0\count[8:0][4]
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$508$n33 I3=$auto$alumacc.cc:474:replace_alu$84.C[4] O=$techmap\adc_spi.$0\count[8:0][4]
 .attr src "top.v:29|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$84.C[4] CO=$auto$alumacc.cc:474:replace_alu$84.C[5] I0=$false I1=$abc$415$n33
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$84.C[4] CO=$auto$alumacc.cc:474:replace_alu$84.C[5] I0=$false I1=$abc$508$n33
 .attr src "top.v:29|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
 .gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[5] I3=$auto$alumacc.cc:474:replace_alu$84.C[5] O=$techmap\adc_spi.$0\count[8:0][5]
 .attr src "top.v:29|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
@@ -70,17 +70,17 @@
 .param LUT_INIT 0110100110010110
 .gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$84.C[6] CO=$auto$alumacc.cc:474:replace_alu$84.C[7] I0=$false I1=adc_spi.count[6]
 .attr src "top.v:29|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$415$n37 I3=$auto$alumacc.cc:474:replace_alu$84.C[7] O=$techmap\adc_spi.$0\count[8:0][7]
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$508$n37 I3=$auto$alumacc.cc:474:replace_alu$84.C[7] O=$techmap\adc_spi.$0\count[8:0][7]
 .attr src "top.v:29|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$84.C[7] CO=$auto$alumacc.cc:474:replace_alu$84.C[8] I0=$false I1=$abc$415$n37
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$84.C[7] CO=$auto$alumacc.cc:474:replace_alu$84.C[8] I0=$false I1=$abc$508$n37
 .attr src "top.v:29|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
 .gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[8] I3=$auto$alumacc.cc:474:replace_alu$84.C[8] O=$techmap\adc_spi.$0\count[8:0][8]
 .attr src "top.v:29|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][0] Q=adc_spi.count[0]
 .attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFF C=CLK D=$abc$415$n49 Q=adc_spi.count[1]
+.gate SB_DFF C=CLK D=$abc$508$n49 Q=adc_spi.count[1]
 .attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][2] Q=adc_spi.count[2]
 .attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
@@ -96,27 +96,21 @@
 .attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][8] Q=adc_spi.count[8]
 .attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFF C=CLK D=$abc$415$n46 Q=adc_spi.DV
-.attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFF C=CLK D=adc_spi.shift_out.out[12] Q=PIN_17
-.attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFF C=CLK D=adc_spi.shift_out.out[13] Q=PIN_16
-.attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFF C=CLK D=adc_spi.shift_out.out[14] Q=PIN_15
+.gate SB_DFF C=CLK D=$abc$508$n46 Q=adc_spi.DV
 .attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[15] Q=PIN_14
 .attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFE C=CLK D=adc_spi.SCLK E=$abc$415$n51 Q=$abc$415$n0
+.gate SB_DFFE C=CLK D=adc_spi.SCLK E=$abc$508$n51 Q=$abc$508$n0
 .attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$abc$415$n12 E=$abc$415$n26 Q=$abc$415$n2
+.gate SB_DFFE C=CLK D=$abc$508$n12 E=$abc$508$n26 Q=$abc$508$n2
 .attr src "top.v:29|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[13] E=$abc$415$n2 Q=adc_spi.shift_out.out[12]
-.attr src "top.v:29|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[14] E=$abc$415$n2 Q=adc_spi.shift_out.out[13]
-.attr src "top.v:29|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[15] E=$abc$415$n2 Q=adc_spi.shift_out.out[14]
-.attr src "top.v:29|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=PIN_9 E=$abc$415$n2 Q=adc_spi.shift_out.out[15]
+.gate SB_DFFE C=CLK D=PIN_16 E=adc_spi.DV Q=PIN_17
+.attr src "top.v:39|shift_16bit.v:16|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=CLK D=PIN_15 E=adc_spi.DV Q=PIN_16
+.attr src "top.v:39|shift_16bit.v:16|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=CLK D=PIN_14 E=adc_spi.DV Q=PIN_15
+.attr src "top.v:39|shift_16bit.v:16|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=PIN_9 E=$abc$508$n2 Q=adc_spi.shift_out.out[15]
 .attr src "top.v:29|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
 .names adc_spi.DV PIN_1
 1 1
@@ -146,11 +140,11 @@
 1 1
 .names $undef adc_data[11]
 1 1
-.names PIN_17 adc_data[12]
+.names $undef adc_data[12]
 1 1
-.names PIN_16 adc_data[13]
+.names $undef adc_data[13]
 1 1
-.names PIN_15 adc_data[14]
+.names $undef adc_data[14]
 1 1
 .names PIN_14 adc_data[15]
 1 1
@@ -184,11 +178,11 @@
 1 1
 .names $undef adc_spi.DATA_OUT[11]
 1 1
-.names PIN_17 adc_spi.DATA_OUT[12]
+.names $undef adc_spi.DATA_OUT[12]
 1 1
-.names PIN_16 adc_spi.DATA_OUT[13]
+.names $undef adc_spi.DATA_OUT[13]
 1 1
-.names PIN_15 adc_spi.DATA_OUT[14]
+.names $undef adc_spi.DATA_OUT[14]
 1 1
 .names PIN_14 adc_spi.DATA_OUT[15]
 1 1
@@ -222,6 +216,12 @@
 1 1
 .names $undef adc_spi.shift_out.out[11]
 1 1
+.names $undef adc_spi.shift_out.out[12]
+1 1
+.names $undef adc_spi.shift_out.out[13]
+1 1
+.names $undef adc_spi.shift_out.out[14]
+1 1
 .names $undef adc_spi.w_data_o[0]
 1 1
 .names $undef adc_spi.w_data_o[1]
@@ -246,15 +246,111 @@
 1 1
 .names $undef adc_spi.w_data_o[11]
 1 1
-.names adc_spi.shift_out.out[12] adc_spi.w_data_o[12]
+.names $undef adc_spi.w_data_o[12]
 1 1
-.names adc_spi.shift_out.out[13] adc_spi.w_data_o[13]
+.names $undef adc_spi.w_data_o[13]
 1 1
-.names adc_spi.shift_out.out[14] adc_spi.w_data_o[14]
+.names $undef adc_spi.w_data_o[14]
 1 1
 .names adc_spi.shift_out.out[15] adc_spi.w_data_o[15]
 1 1
 .names adc_spi.DV data_valid
+1 1
+.names $undef out_0[0]
+1 1
+.names $undef out_0[1]
+1 1
+.names $undef out_0[2]
+1 1
+.names $undef out_0[3]
+1 1
+.names $undef out_0[4]
+1 1
+.names $undef out_0[5]
+1 1
+.names $undef out_0[6]
+1 1
+.names $undef out_0[7]
+1 1
+.names $undef out_0[8]
+1 1
+.names $undef out_0[9]
+1 1
+.names $undef out_0[10]
+1 1
+.names $undef out_0[11]
+1 1
+.names $undef out_0[12]
+1 1
+.names $undef out_0[13]
+1 1
+.names $undef out_0[14]
+1 1
+.names PIN_15 out_0[15]
+1 1
+.names $undef out_1[0]
+1 1
+.names $undef out_1[1]
+1 1
+.names $undef out_1[2]
+1 1
+.names $undef out_1[3]
+1 1
+.names $undef out_1[4]
+1 1
+.names $undef out_1[5]
+1 1
+.names $undef out_1[6]
+1 1
+.names $undef out_1[7]
+1 1
+.names $undef out_1[8]
+1 1
+.names $undef out_1[9]
+1 1
+.names $undef out_1[10]
+1 1
+.names $undef out_1[11]
+1 1
+.names $undef out_1[12]
+1 1
+.names $undef out_1[13]
+1 1
+.names $undef out_1[14]
+1 1
+.names PIN_16 out_1[15]
+1 1
+.names $undef out_2[0]
+1 1
+.names $undef out_2[1]
+1 1
+.names $undef out_2[2]
+1 1
+.names $undef out_2[3]
+1 1
+.names $undef out_2[4]
+1 1
+.names $undef out_2[5]
+1 1
+.names $undef out_2[6]
+1 1
+.names $undef out_2[7]
+1 1
+.names $undef out_2[8]
+1 1
+.names $undef out_2[9]
+1 1
+.names $undef out_2[10]
+1 1
+.names $undef out_2[11]
+1 1
+.names $undef out_2[12]
+1 1
+.names $undef out_2[13]
+1 1
+.names $undef out_2[14]
+1 1
+.names PIN_17 out_2[15]
 1 1
 .names CLK shift_1.clk
 1 1
@@ -282,14 +378,110 @@
 1 1
 .names $undef shift_1.data[11]
 1 1
-.names PIN_17 shift_1.data[12]
+.names $undef shift_1.data[12]
 1 1
-.names PIN_16 shift_1.data[13]
+.names $undef shift_1.data[13]
 1 1
-.names PIN_15 shift_1.data[14]
+.names $undef shift_1.data[14]
 1 1
 .names PIN_14 shift_1.data[15]
 1 1
 .names adc_spi.DV shift_1.en
+1 1
+.names $undef shift_1.out_0[0]
+1 1
+.names $undef shift_1.out_0[1]
+1 1
+.names $undef shift_1.out_0[2]
+1 1
+.names $undef shift_1.out_0[3]
+1 1
+.names $undef shift_1.out_0[4]
+1 1
+.names $undef shift_1.out_0[5]
+1 1
+.names $undef shift_1.out_0[6]
+1 1
+.names $undef shift_1.out_0[7]
+1 1
+.names $undef shift_1.out_0[8]
+1 1
+.names $undef shift_1.out_0[9]
+1 1
+.names $undef shift_1.out_0[10]
+1 1
+.names $undef shift_1.out_0[11]
+1 1
+.names $undef shift_1.out_0[12]
+1 1
+.names $undef shift_1.out_0[13]
+1 1
+.names $undef shift_1.out_0[14]
+1 1
+.names PIN_15 shift_1.out_0[15]
+1 1
+.names $undef shift_1.out_1[0]
+1 1
+.names $undef shift_1.out_1[1]
+1 1
+.names $undef shift_1.out_1[2]
+1 1
+.names $undef shift_1.out_1[3]
+1 1
+.names $undef shift_1.out_1[4]
+1 1
+.names $undef shift_1.out_1[5]
+1 1
+.names $undef shift_1.out_1[6]
+1 1
+.names $undef shift_1.out_1[7]
+1 1
+.names $undef shift_1.out_1[8]
+1 1
+.names $undef shift_1.out_1[9]
+1 1
+.names $undef shift_1.out_1[10]
+1 1
+.names $undef shift_1.out_1[11]
+1 1
+.names $undef shift_1.out_1[12]
+1 1
+.names $undef shift_1.out_1[13]
+1 1
+.names $undef shift_1.out_1[14]
+1 1
+.names PIN_16 shift_1.out_1[15]
+1 1
+.names $undef shift_1.out_2[0]
+1 1
+.names $undef shift_1.out_2[1]
+1 1
+.names $undef shift_1.out_2[2]
+1 1
+.names $undef shift_1.out_2[3]
+1 1
+.names $undef shift_1.out_2[4]
+1 1
+.names $undef shift_1.out_2[5]
+1 1
+.names $undef shift_1.out_2[6]
+1 1
+.names $undef shift_1.out_2[7]
+1 1
+.names $undef shift_1.out_2[8]
+1 1
+.names $undef shift_1.out_2[9]
+1 1
+.names $undef shift_1.out_2[10]
+1 1
+.names $undef shift_1.out_2[11]
+1 1
+.names $undef shift_1.out_2[12]
+1 1
+.names $undef shift_1.out_2[13]
+1 1
+.names $undef shift_1.out_2[14]
+1 1
+.names PIN_17 shift_1.out_2[15]
 1 1
 .end
