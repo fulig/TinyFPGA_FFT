@@ -7,329 +7,329 @@
 .names $true
 1
 .names $undef
-.gate SB_LUT4 I0=$abc$1404$n28 I1=adc_spi.count[6] I2=$false I3=$false O=$abc$1404$n12
+.gate SB_LUT4 I0=$abc$1398$n28 I1=adc_spi.count[6] I2=$false I3=$false O=$abc$1398$n12
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0111
-.gate SB_LUT4 I0=$abc$1404$n98 I1=adc_spi.count[3] I2=$false I3=$false O=$abc$1404$n28
+.gate SB_LUT4 I0=$abc$1398$n98 I1=adc_spi.count[3] I2=$false I3=$false O=$abc$1398$n28
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=adc_spi.count[2] I1=adc_spi.count[4] I2=adc_spi.count[5] I3=$abc$1404$n99 O=$abc$1404$n98
+.gate SB_LUT4 I0=adc_spi.count[2] I1=adc_spi.count[4] I2=adc_spi.count[5] I3=$abc$1398$n99 O=$abc$1398$n98
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000100000000
-.gate SB_LUT4 I0=adc_spi.count[7] I1=adc_spi.count[8] I2=adc_spi.count[0] I3=adc_spi.count[1] O=$abc$1404$n99
+.gate SB_LUT4 I0=adc_spi.count[7] I1=adc_spi.count[8] I2=adc_spi.count[0] I3=adc_spi.count[1] O=$abc$1398$n99
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=$abc$1404$n12 I1=adc_spi.count[3] I2=$false I3=$false O=$abc$1404$n33
+.gate SB_LUT4 I0=$abc$1398$n12 I1=adc_spi.count[3] I2=$false I3=$false O=$abc$1398$n33
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$1404$n28 I1=adc_spi.count[6] I2=$false I3=$false O=$abc$1404$n38
+.gate SB_LUT4 I0=$abc$1398$n28 I1=adc_spi.count[6] I2=$false I3=$false O=$abc$1398$n38
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=adc_spi.count[6] I1=adc_spi.count[3] I2=$abc$1404$n98 I3=$false O=$abc$1404$n46
+.gate SB_LUT4 I0=adc_spi.count[6] I1=adc_spi.count[3] I2=$abc$1398$n98 I3=$false O=$abc$1398$n46
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10010000
-.gate SB_LUT4 I0=adc_spi.count[0] I1=adc_spi.count[1] I2=$false I3=$false O=$abc$1404$n49
+.gate SB_LUT4 I0=adc_spi.count[0] I1=adc_spi.count[1] I2=$false I3=$false O=$abc$1398$n49
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0110
-.gate SB_LUT4 I0=$abc$1404$n105 I1=adder_0.generate_N_bit_Adder[13].f.x I2=adder_0.generate_N_bit_Adder[13].f.y I3=$false O=PIN_17
+.gate SB_LUT4 I0=$abc$1398$n105 I1=adder_0.generate_N_bit_Adder[13].f.x I2=adder_0.generate_N_bit_Adder[13].f.y I3=$false O=PIN_17
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01101001
-.gate SB_LUT4 I0=$abc$1404$n106 I1=$abc$1404$n123 I2=$abc$1404$n124 I3=$abc$1404$n122_1 O=$abc$1404$n105
+.gate SB_LUT4 I0=$abc$1398$n106 I1=$abc$1398$n123 I2=$abc$1398$n124 I3=$abc$1398$n122_1 O=$abc$1398$n105
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000001001111
-.gate SB_LUT4 I0=$abc$1404$n107_1 I1=$abc$1404$n119 I2=$abc$1404$n120 I3=$abc$1404$n121_1 O=$abc$1404$n106
+.gate SB_LUT4 I0=$abc$1398$n107_1 I1=$abc$1398$n119 I2=$abc$1398$n120 I3=$abc$1398$n121_1 O=$abc$1398$n106
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0100111100000000
-.gate SB_LUT4 I0=$abc$1404$n116 I1=$abc$1404$n108_1 I2=$abc$1404$n117 I3=$abc$1404$n118 O=$abc$1404$n107_1
+.gate SB_LUT4 I0=$abc$1398$n116 I1=$abc$1398$n108_1 I2=$abc$1398$n117 I3=$abc$1398$n118 O=$abc$1398$n107_1
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0001111100000000
-.gate SB_LUT4 I0=$abc$1404$n109 I1=$abc$1404$n114_1 I2=$abc$1404$n115_1 I3=$abc$1404$n113 O=$abc$1404$n108_1
+.gate SB_LUT4 I0=$abc$1398$n109 I1=$abc$1398$n114_1 I2=$abc$1398$n115_1 I3=$abc$1398$n113 O=$abc$1398$n108_1
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000001001111
-.gate SB_LUT4 I0=$abc$1404$n110 I1=adder_0.generate_N_bit_Adder[1].f.x I2=$abc$1404$n111 I3=$abc$1404$n112 O=$abc$1404$n109
+.gate SB_LUT4 I0=$abc$1398$n110 I1=adder_0.generate_N_bit_Adder[1].f.x I2=$abc$1398$n111 I3=$abc$1398$n112 O=$abc$1398$n109
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000001110001
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[0].f.x I1=adder_0.generate_N_bit_Adder[0].f.y I2=$false I3=$false O=$abc$1404$n110
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[0].f.x I1=adder_0.generate_N_bit_Adder[0].f.y I2=$false I3=$false O=$abc$1398$n110
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=shift_1.out_4[1] I1=shift_1.out_4[0] I2=$false I3=$false O=$abc$1404$n111
+.gate SB_LUT4 I0=shift_1.out_4[1] I1=shift_1.out_4[0] I2=$false I3=$false O=$abc$1398$n111
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1001
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[2].f.x I1=adder_0.generate_N_bit_Adder[2].f.y I2=$false I3=$false O=$abc$1404$n112
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[2].f.x I1=adder_0.generate_N_bit_Adder[2].f.y I2=$false I3=$false O=$abc$1398$n112
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[4].f.x I1=adder_0.generate_N_bit_Adder[4].f.y I2=$false I3=$false O=$abc$1404$n113
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[4].f.x I1=adder_0.generate_N_bit_Adder[4].f.y I2=$false I3=$false O=$abc$1398$n113
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0001
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[3].f.x I1=adder_0.generate_N_bit_Adder[3].f.y I2=adder_0.generate_N_bit_Adder[2].f.x I3=adder_0.generate_N_bit_Adder[2].f.y O=$abc$1404$n114_1
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[3].f.x I1=adder_0.generate_N_bit_Adder[3].f.y I2=adder_0.generate_N_bit_Adder[2].f.x I3=adder_0.generate_N_bit_Adder[2].f.y O=$abc$1398$n114_1
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110111011100000
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[4].f.x I1=adder_0.generate_N_bit_Adder[4].f.y I2=adder_0.generate_N_bit_Adder[3].f.x I3=adder_0.generate_N_bit_Adder[3].f.y O=$abc$1404$n115_1
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[4].f.x I1=adder_0.generate_N_bit_Adder[4].f.y I2=adder_0.generate_N_bit_Adder[3].f.x I3=adder_0.generate_N_bit_Adder[3].f.y O=$abc$1398$n115_1
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000011101110111
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[5].f.x I1=adder_0.generate_N_bit_Adder[5].f.y I2=$false I3=$false O=$abc$1404$n116
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[5].f.x I1=adder_0.generate_N_bit_Adder[5].f.y I2=$false I3=$false O=$abc$1398$n116
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[6].f.x I1=adder_0.generate_N_bit_Adder[6].f.y I2=adder_0.generate_N_bit_Adder[5].f.x I3=adder_0.generate_N_bit_Adder[5].f.y O=$abc$1404$n117
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[6].f.x I1=adder_0.generate_N_bit_Adder[6].f.y I2=adder_0.generate_N_bit_Adder[5].f.x I3=adder_0.generate_N_bit_Adder[5].f.y O=$abc$1398$n117
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110111011100000
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[7].f.x I1=adder_0.generate_N_bit_Adder[7].f.y I2=adder_0.generate_N_bit_Adder[6].f.x I3=adder_0.generate_N_bit_Adder[6].f.y O=$abc$1404$n118
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[7].f.x I1=adder_0.generate_N_bit_Adder[7].f.y I2=adder_0.generate_N_bit_Adder[6].f.x I3=adder_0.generate_N_bit_Adder[6].f.y O=$abc$1398$n118
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000011101110111
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[8].f.x I1=adder_0.generate_N_bit_Adder[8].f.y I2=adder_0.generate_N_bit_Adder[7].f.x I3=adder_0.generate_N_bit_Adder[7].f.y O=$abc$1404$n119
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[8].f.x I1=adder_0.generate_N_bit_Adder[8].f.y I2=adder_0.generate_N_bit_Adder[7].f.x I3=adder_0.generate_N_bit_Adder[7].f.y O=$abc$1398$n119
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110111011100000
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[9].f.x I1=adder_0.generate_N_bit_Adder[9].f.y I2=adder_0.generate_N_bit_Adder[8].f.x I3=adder_0.generate_N_bit_Adder[8].f.y O=$abc$1404$n120
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[9].f.x I1=adder_0.generate_N_bit_Adder[9].f.y I2=adder_0.generate_N_bit_Adder[8].f.x I3=adder_0.generate_N_bit_Adder[8].f.y O=$abc$1398$n120
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000011101110111
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[10].f.x I1=adder_0.generate_N_bit_Adder[10].f.y I2=adder_0.generate_N_bit_Adder[9].f.x I3=adder_0.generate_N_bit_Adder[9].f.y O=$abc$1404$n121_1
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[10].f.x I1=adder_0.generate_N_bit_Adder[10].f.y I2=adder_0.generate_N_bit_Adder[9].f.x I3=adder_0.generate_N_bit_Adder[9].f.y O=$abc$1398$n121_1
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110111011100000
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[12].f.x I1=adder_0.generate_N_bit_Adder[12].f.y I2=$false I3=$false O=$abc$1404$n122_1
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[12].f.x I1=adder_0.generate_N_bit_Adder[12].f.y I2=$false I3=$false O=$abc$1398$n122_1
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[11].f.x I1=adder_0.generate_N_bit_Adder[11].f.y I2=adder_0.generate_N_bit_Adder[10].f.x I3=adder_0.generate_N_bit_Adder[10].f.y O=$abc$1404$n123
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[11].f.x I1=adder_0.generate_N_bit_Adder[11].f.y I2=adder_0.generate_N_bit_Adder[10].f.x I3=adder_0.generate_N_bit_Adder[10].f.y O=$abc$1398$n123
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000011101110111
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[12].f.x I1=adder_0.generate_N_bit_Adder[12].f.y I2=adder_0.generate_N_bit_Adder[11].f.x I3=adder_0.generate_N_bit_Adder[11].f.y O=$abc$1404$n124
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[12].f.x I1=adder_0.generate_N_bit_Adder[12].f.y I2=adder_0.generate_N_bit_Adder[11].f.x I3=adder_0.generate_N_bit_Adder[11].f.y O=$abc$1398$n124
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1110111011100000
-.gate SB_LUT4 I0=$abc$1404$n126 I1=adder_0.generate_N_bit_Adder[14].f.x I2=adder_0.generate_N_bit_Adder[14].f.y I3=$false O=PIN_16
+.gate SB_LUT4 I0=$abc$1398$n126 I1=adder_0.generate_N_bit_Adder[14].f.x I2=adder_0.generate_N_bit_Adder[14].f.y I3=$false O=PIN_16
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01101001
-.gate SB_LUT4 I0=$abc$1404$n105 I1=adder_0.generate_N_bit_Adder[13].f.x I2=adder_0.generate_N_bit_Adder[13].f.y I3=$false O=$abc$1404$n126
+.gate SB_LUT4 I0=$abc$1398$n105 I1=adder_0.generate_N_bit_Adder[13].f.x I2=adder_0.generate_N_bit_Adder[13].f.y I3=$false O=$abc$1398$n126
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00101011
-.gate SB_LUT4 I0=$abc$1404$n126 I1=adder_0.generate_N_bit_Adder[14].f.x I2=adder_0.generate_N_bit_Adder[14].f.y I3=$abc$1404$n128_1 O=PIN_15
+.gate SB_LUT4 I0=$abc$1398$n126 I1=adder_0.generate_N_bit_Adder[14].f.x I2=adder_0.generate_N_bit_Adder[14].f.y I3=$abc$1398$n128_1 O=PIN_15
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0010101111010100
-.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[15].f.x I1=adder_0.generate_N_bit_Adder[15].f.y I2=$false I3=$false O=$abc$1404$n128_1
+.gate SB_LUT4 I0=adder_0.generate_N_bit_Adder[15].f.x I1=adder_0.generate_N_bit_Adder[15].f.y I2=$false I3=$false O=$abc$1398$n128_1
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0110
-.gate SB_LUT4 I0=$abc$1404$n0 I1=$false I2=$false I3=$false O=adc_spi.SCLK
+.gate SB_LUT4 I0=$abc$1398$n0 I1=$false I2=$false I3=$false O=adc_spi.SCLK
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=$abc$1404$n2 I1=$false I2=$false I3=$false O=PIN_7
+.gate SB_LUT4 I0=$abc$1398$n2 I1=$false I2=$false I3=$false O=PIN_7
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[1] I1=$false I2=$false I3=$false O=$abc$1404$n51
+.gate SB_LUT4 I0=shift_1.out_4[1] I1=$false I2=$false I3=$false O=$abc$1398$n51
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[0] I1=$false I2=$false I3=$false O=$abc$1404$n54
+.gate SB_LUT4 I0=shift_1.out_4[0] I1=$false I2=$false I3=$false O=$abc$1398$n54
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[2] I1=$false I2=$false I3=$false O=$abc$1404$n56
+.gate SB_LUT4 I0=shift_1.out_4[2] I1=$false I2=$false I3=$false O=$abc$1398$n56
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[3] I1=$false I2=$false I3=$false O=$abc$1404$n58
+.gate SB_LUT4 I0=shift_1.out_4[3] I1=$false I2=$false I3=$false O=$abc$1398$n58
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[4] I1=$false I2=$false I3=$false O=$abc$1404$n60
+.gate SB_LUT4 I0=shift_1.out_4[4] I1=$false I2=$false I3=$false O=$abc$1398$n60
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[5] I1=$false I2=$false I3=$false O=$abc$1404$n62
+.gate SB_LUT4 I0=shift_1.out_4[5] I1=$false I2=$false I3=$false O=$abc$1398$n62
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[6] I1=$false I2=$false I3=$false O=$abc$1404$n64
+.gate SB_LUT4 I0=shift_1.out_4[6] I1=$false I2=$false I3=$false O=$abc$1398$n64
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[7] I1=$false I2=$false I3=$false O=$abc$1404$n66
+.gate SB_LUT4 I0=shift_1.out_4[7] I1=$false I2=$false I3=$false O=$abc$1398$n66
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[8] I1=$false I2=$false I3=$false O=$abc$1404$n68
+.gate SB_LUT4 I0=shift_1.out_4[8] I1=$false I2=$false I3=$false O=$abc$1398$n68
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[9] I1=$false I2=$false I3=$false O=$abc$1404$n70
+.gate SB_LUT4 I0=shift_1.out_4[9] I1=$false I2=$false I3=$false O=$abc$1398$n70
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[10] I1=$false I2=$false I3=$false O=$abc$1404$n72
+.gate SB_LUT4 I0=shift_1.out_4[10] I1=$false I2=$false I3=$false O=$abc$1398$n72
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[11] I1=$false I2=$false I3=$false O=$abc$1404$n74
+.gate SB_LUT4 I0=shift_1.out_4[11] I1=$false I2=$false I3=$false O=$abc$1398$n74
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[12] I1=$false I2=$false I3=$false O=$abc$1404$n76
+.gate SB_LUT4 I0=shift_1.out_4[12] I1=$false I2=$false I3=$false O=$abc$1398$n76
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[13] I1=$false I2=$false I3=$false O=$abc$1404$n78
+.gate SB_LUT4 I0=shift_1.out_4[13] I1=$false I2=$false I3=$false O=$abc$1398$n78
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[14] I1=$false I2=$false I3=$false O=$abc$1404$n80
+.gate SB_LUT4 I0=shift_1.out_4[14] I1=$false I2=$false I3=$false O=$abc$1398$n80
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=shift_1.out_4[15] I1=$false I2=$false I3=$false O=$abc$1404$n82
+.gate SB_LUT4 I0=shift_1.out_4[15] I1=$false I2=$false I3=$false O=$abc$1398$n82
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=adc_spi.count[0] I1=$false I2=$false I3=$false O=$abc$1404$n193
+.gate SB_LUT4 I0=adc_spi.count[0] I1=$false I2=$false I3=$false O=$abc$1398$n193
 .attr src "/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
 .gate SB_LUT4 I0=$false I1=$true I2=adc_spi.count[0] I3=$false O=$techmap\adc_spi.$0\count[8:0][0]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=adc_spi.count[0] CO=$auto$alumacc.cc:474:replace_alu$96.C[2] I0=$false I1=adc_spi.count[1]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[2] I3=$auto$alumacc.cc:474:replace_alu$96.C[2] O=$techmap\adc_spi.$0\count[8:0][2]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=adc_spi.count[0] CO=$auto$alumacc.cc:474:replace_alu$90.C[2] I0=$false I1=adc_spi.count[1]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[2] I3=$auto$alumacc.cc:474:replace_alu$90.C[2] O=$techmap\adc_spi.$0\count[8:0][2]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$96.C[2] CO=$auto$alumacc.cc:474:replace_alu$96.C[3] I0=$false I1=adc_spi.count[2]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n33 I3=$auto$alumacc.cc:474:replace_alu$96.C[3] O=$techmap\adc_spi.$0\count[8:0][3]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$90.C[2] CO=$auto$alumacc.cc:474:replace_alu$90.C[3] I0=$false I1=adc_spi.count[2]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n33 I3=$auto$alumacc.cc:474:replace_alu$90.C[3] O=$techmap\adc_spi.$0\count[8:0][3]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$96.C[3] CO=$auto$alumacc.cc:474:replace_alu$96.C[4] I0=$false I1=$abc$1404$n33
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[4] I3=$auto$alumacc.cc:474:replace_alu$96.C[4] O=$techmap\adc_spi.$0\count[8:0][4]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$90.C[3] CO=$auto$alumacc.cc:474:replace_alu$90.C[4] I0=$false I1=$abc$1398$n33
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[4] I3=$auto$alumacc.cc:474:replace_alu$90.C[4] O=$techmap\adc_spi.$0\count[8:0][4]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$96.C[4] CO=$auto$alumacc.cc:474:replace_alu$96.C[5] I0=$false I1=adc_spi.count[4]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[5] I3=$auto$alumacc.cc:474:replace_alu$96.C[5] O=$techmap\adc_spi.$0\count[8:0][5]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$90.C[4] CO=$auto$alumacc.cc:474:replace_alu$90.C[5] I0=$false I1=adc_spi.count[4]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[5] I3=$auto$alumacc.cc:474:replace_alu$90.C[5] O=$techmap\adc_spi.$0\count[8:0][5]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$96.C[5] CO=$auto$alumacc.cc:474:replace_alu$96.C[6] I0=$false I1=adc_spi.count[5]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n38 I3=$auto$alumacc.cc:474:replace_alu$96.C[6] O=$techmap\adc_spi.$0\count[8:0][6]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$90.C[5] CO=$auto$alumacc.cc:474:replace_alu$90.C[6] I0=$false I1=adc_spi.count[5]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n38 I3=$auto$alumacc.cc:474:replace_alu$90.C[6] O=$techmap\adc_spi.$0\count[8:0][6]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$96.C[6] CO=$auto$alumacc.cc:474:replace_alu$96.C[7] I0=$false I1=$abc$1404$n38
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[7] I3=$auto$alumacc.cc:474:replace_alu$96.C[7] O=$techmap\adc_spi.$0\count[8:0][7]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$90.C[6] CO=$auto$alumacc.cc:474:replace_alu$90.C[7] I0=$false I1=$abc$1398$n38
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[7] I3=$auto$alumacc.cc:474:replace_alu$90.C[7] O=$techmap\adc_spi.$0\count[8:0][7]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$96.C[7] CO=$auto$alumacc.cc:474:replace_alu$96.C[8] I0=$false I1=adc_spi.count[7]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[8] I3=$auto$alumacc.cc:474:replace_alu$96.C[8] O=$techmap\adc_spi.$0\count[8:0][8]
-.attr src "top.v:31|adc-spi.v:53|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$90.C[7] CO=$auto$alumacc.cc:474:replace_alu$90.C[8] I0=$false I1=adc_spi.count[7]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=adc_spi.count[8] I3=$auto$alumacc.cc:474:replace_alu$90.C[8] O=$techmap\adc_spi.$0\count[8:0][8]
+.attr src "top.v:31|adc-spi.v:50|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_LUT4 I0=$false I1=$true I2=$abc$1404$n54 I3=$false O=adder_0.generate_N_bit_Adder[0].f.y
+.gate SB_LUT4 I0=$false I1=$true I2=$abc$1398$n54 I3=$false O=adder_0.generate_N_bit_Adder[0].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n72 I3=$auto$alumacc.cc:474:replace_alu$99.C[10] O=adder_0.generate_N_bit_Adder[10].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n72 I3=$auto$alumacc.cc:474:replace_alu$93.C[10] O=adder_0.generate_N_bit_Adder[10].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[10] CO=$auto$alumacc.cc:474:replace_alu$99.C[11] I0=$false I1=$abc$1404$n72
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[10] CO=$auto$alumacc.cc:474:replace_alu$93.C[11] I0=$false I1=$abc$1398$n72
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n74 I3=$auto$alumacc.cc:474:replace_alu$99.C[11] O=adder_0.generate_N_bit_Adder[11].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n74 I3=$auto$alumacc.cc:474:replace_alu$93.C[11] O=adder_0.generate_N_bit_Adder[11].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[11] CO=$auto$alumacc.cc:474:replace_alu$99.C[12] I0=$false I1=$abc$1404$n74
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[11] CO=$auto$alumacc.cc:474:replace_alu$93.C[12] I0=$false I1=$abc$1398$n74
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n76 I3=$auto$alumacc.cc:474:replace_alu$99.C[12] O=adder_0.generate_N_bit_Adder[12].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n76 I3=$auto$alumacc.cc:474:replace_alu$93.C[12] O=adder_0.generate_N_bit_Adder[12].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[12] CO=$auto$alumacc.cc:474:replace_alu$99.C[13] I0=$false I1=$abc$1404$n76
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[12] CO=$auto$alumacc.cc:474:replace_alu$93.C[13] I0=$false I1=$abc$1398$n76
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n78 I3=$auto$alumacc.cc:474:replace_alu$99.C[13] O=adder_0.generate_N_bit_Adder[13].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n78 I3=$auto$alumacc.cc:474:replace_alu$93.C[13] O=adder_0.generate_N_bit_Adder[13].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[13] CO=$auto$alumacc.cc:474:replace_alu$99.C[14] I0=$false I1=$abc$1404$n78
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[13] CO=$auto$alumacc.cc:474:replace_alu$93.C[14] I0=$false I1=$abc$1398$n78
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n80 I3=$auto$alumacc.cc:474:replace_alu$99.C[14] O=adder_0.generate_N_bit_Adder[14].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n80 I3=$auto$alumacc.cc:474:replace_alu$93.C[14] O=adder_0.generate_N_bit_Adder[14].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[14] CO=$auto$alumacc.cc:474:replace_alu$99.C[15] I0=$false I1=$abc$1404$n80
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[14] CO=$auto$alumacc.cc:474:replace_alu$93.C[15] I0=$false I1=$abc$1398$n80
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n82 I3=$auto$alumacc.cc:474:replace_alu$99.C[15] O=adder_0.generate_N_bit_Adder[15].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n82 I3=$auto$alumacc.cc:474:replace_alu$93.C[15] O=adder_0.generate_N_bit_Adder[15].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$abc$1404$n54 CO=$auto$alumacc.cc:474:replace_alu$99.C[2] I0=$false I1=$abc$1404$n51
+.gate SB_CARRY CI=$abc$1398$n54 CO=$auto$alumacc.cc:474:replace_alu$93.C[2] I0=$false I1=$abc$1398$n51
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n56 I3=$auto$alumacc.cc:474:replace_alu$99.C[2] O=adder_0.generate_N_bit_Adder[2].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n56 I3=$auto$alumacc.cc:474:replace_alu$93.C[2] O=adder_0.generate_N_bit_Adder[2].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[2] CO=$auto$alumacc.cc:474:replace_alu$99.C[3] I0=$false I1=$abc$1404$n56
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[2] CO=$auto$alumacc.cc:474:replace_alu$93.C[3] I0=$false I1=$abc$1398$n56
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n58 I3=$auto$alumacc.cc:474:replace_alu$99.C[3] O=adder_0.generate_N_bit_Adder[3].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n58 I3=$auto$alumacc.cc:474:replace_alu$93.C[3] O=adder_0.generate_N_bit_Adder[3].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[3] CO=$auto$alumacc.cc:474:replace_alu$99.C[4] I0=$false I1=$abc$1404$n58
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[3] CO=$auto$alumacc.cc:474:replace_alu$93.C[4] I0=$false I1=$abc$1398$n58
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n60 I3=$auto$alumacc.cc:474:replace_alu$99.C[4] O=adder_0.generate_N_bit_Adder[4].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n60 I3=$auto$alumacc.cc:474:replace_alu$93.C[4] O=adder_0.generate_N_bit_Adder[4].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[4] CO=$auto$alumacc.cc:474:replace_alu$99.C[5] I0=$false I1=$abc$1404$n60
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[4] CO=$auto$alumacc.cc:474:replace_alu$93.C[5] I0=$false I1=$abc$1398$n60
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n62 I3=$auto$alumacc.cc:474:replace_alu$99.C[5] O=adder_0.generate_N_bit_Adder[5].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n62 I3=$auto$alumacc.cc:474:replace_alu$93.C[5] O=adder_0.generate_N_bit_Adder[5].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[5] CO=$auto$alumacc.cc:474:replace_alu$99.C[6] I0=$false I1=$abc$1404$n62
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[5] CO=$auto$alumacc.cc:474:replace_alu$93.C[6] I0=$false I1=$abc$1398$n62
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n64 I3=$auto$alumacc.cc:474:replace_alu$99.C[6] O=adder_0.generate_N_bit_Adder[6].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n64 I3=$auto$alumacc.cc:474:replace_alu$93.C[6] O=adder_0.generate_N_bit_Adder[6].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[6] CO=$auto$alumacc.cc:474:replace_alu$99.C[7] I0=$false I1=$abc$1404$n64
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[6] CO=$auto$alumacc.cc:474:replace_alu$93.C[7] I0=$false I1=$abc$1398$n64
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n66 I3=$auto$alumacc.cc:474:replace_alu$99.C[7] O=adder_0.generate_N_bit_Adder[7].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n66 I3=$auto$alumacc.cc:474:replace_alu$93.C[7] O=adder_0.generate_N_bit_Adder[7].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[7] CO=$auto$alumacc.cc:474:replace_alu$99.C[8] I0=$false I1=$abc$1404$n66
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[7] CO=$auto$alumacc.cc:474:replace_alu$93.C[8] I0=$false I1=$abc$1398$n66
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n68 I3=$auto$alumacc.cc:474:replace_alu$99.C[8] O=adder_0.generate_N_bit_Adder[8].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n68 I3=$auto$alumacc.cc:474:replace_alu$93.C[8] O=adder_0.generate_N_bit_Adder[8].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[8] CO=$auto$alumacc.cc:474:replace_alu$99.C[9] I0=$false I1=$abc$1404$n68
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[8] CO=$auto$alumacc.cc:474:replace_alu$93.C[9] I0=$false I1=$abc$1398$n68
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=$abc$1404$n70 I3=$auto$alumacc.cc:474:replace_alu$99.C[9] O=adder_0.generate_N_bit_Adder[9].f.y
+.gate SB_LUT4 I0=$false I1=$false I2=$abc$1398$n70 I3=$auto$alumacc.cc:474:replace_alu$93.C[9] O=adder_0.generate_N_bit_Adder[9].f.y
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$99.C[9] CO=$auto$alumacc.cc:474:replace_alu$99.C[10] I0=$false I1=$abc$1404$n70
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$93.C[9] CO=$auto$alumacc.cc:474:replace_alu$93.C[10] I0=$false I1=$abc$1398$n70
 .attr src "top.v:56|adder.v:39|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/arith_map.v:47"
+.gate SB_DFF C=CLK D=$abc$1398$n46 Q=adc_spi.DV
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][0] Q=adc_spi.count[0]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFF C=CLK D=$abc$1404$n49 Q=adc_spi.count[1]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.gate SB_DFF C=CLK D=$abc$1398$n49 Q=adc_spi.count[1]
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][2] Q=adc_spi.count[2]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][3] Q=adc_spi.count[3]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][4] Q=adc_spi.count[4]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][5] Q=adc_spi.count[5]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][6] Q=adc_spi.count[6]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][7] Q=adc_spi.count[7]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=$techmap\adc_spi.$0\count[8:0][8] Q=adc_spi.count[8]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFF C=CLK D=$abc$1404$n46 Q=adc_spi.DV
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[0] Q=adc_spi.DATA_OUT[0]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[1] Q=adc_spi.DATA_OUT[1]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[2] Q=adc_spi.DATA_OUT[2]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[3] Q=adc_spi.DATA_OUT[3]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[4] Q=adc_spi.DATA_OUT[4]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[5] Q=adc_spi.DATA_OUT[5]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[6] Q=adc_spi.DATA_OUT[6]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[7] Q=adc_spi.DATA_OUT[7]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[8] Q=adc_spi.DATA_OUT[8]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[9] Q=adc_spi.DATA_OUT[9]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[10] Q=adc_spi.DATA_OUT[10]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[11] Q=adc_spi.DATA_OUT[11]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[12] Q=adc_spi.DATA_OUT[12]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[13] Q=adc_spi.DATA_OUT[13]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[14] Q=adc_spi.DATA_OUT[14]
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=CLK D=adc_spi.shift_out.out[15] Q=PIN_14
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFE C=CLK D=adc_spi.SCLK E=$abc$1404$n193 Q=$abc$1404$n0
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=CLK D=$abc$1404$n12 E=$abc$1404$n28 Q=$abc$1404$n2
-.attr src "top.v:31|adc-spi.v:36|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:2"
+.gate SB_DFFE C=CLK D=adc_spi.SCLK E=$abc$1398$n193 Q=$abc$1398$n0
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=CLK D=$abc$1398$n12 E=$abc$1398$n28 Q=$abc$1398$n2
+.attr src "top.v:31|adc-spi.v:35|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
 .gate SB_DFFE C=CLK D=shift_1.out_3[0] E=adc_spi.DV Q=shift_1.out_4[0]
 .attr src "top.v:41|shift_16bit.v:16|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
 .gate SB_DFFE C=CLK D=shift_1.out_3[1] E=adc_spi.DV Q=shift_1.out_4[1]
@@ -490,38 +490,38 @@
 .attr src "top.v:41|shift_16bit.v:16|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
 .gate SB_DFFE C=CLK D=PIN_14 E=adc_spi.DV Q=adder_0.generate_N_bit_Adder[15].f.x
 .attr src "top.v:41|shift_16bit.v:16|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[1] E=$abc$1404$n2 Q=adc_spi.shift_out.out[0]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[2] E=$abc$1404$n2 Q=adc_spi.shift_out.out[1]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[3] E=$abc$1404$n2 Q=adc_spi.shift_out.out[2]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[4] E=$abc$1404$n2 Q=adc_spi.shift_out.out[3]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[5] E=$abc$1404$n2 Q=adc_spi.shift_out.out[4]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[6] E=$abc$1404$n2 Q=adc_spi.shift_out.out[5]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[7] E=$abc$1404$n2 Q=adc_spi.shift_out.out[6]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[8] E=$abc$1404$n2 Q=adc_spi.shift_out.out[7]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[9] E=$abc$1404$n2 Q=adc_spi.shift_out.out[8]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[10] E=$abc$1404$n2 Q=adc_spi.shift_out.out[9]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[11] E=$abc$1404$n2 Q=adc_spi.shift_out.out[10]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[12] E=$abc$1404$n2 Q=adc_spi.shift_out.out[11]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[13] E=$abc$1404$n2 Q=adc_spi.shift_out.out[12]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[14] E=$abc$1404$n2 Q=adc_spi.shift_out.out[13]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[15] E=$abc$1404$n2 Q=adc_spi.shift_out.out[14]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=adc_spi.SCLK D=PIN_9 E=$abc$1404$n2 Q=adc_spi.shift_out.out[15]
-.attr src "top.v:31|adc-spi.v:23|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[1] E=$abc$1398$n2 Q=adc_spi.shift_out.out[0]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[2] E=$abc$1398$n2 Q=adc_spi.shift_out.out[1]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[3] E=$abc$1398$n2 Q=adc_spi.shift_out.out[2]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[4] E=$abc$1398$n2 Q=adc_spi.shift_out.out[3]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[5] E=$abc$1398$n2 Q=adc_spi.shift_out.out[4]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[6] E=$abc$1398$n2 Q=adc_spi.shift_out.out[5]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[7] E=$abc$1398$n2 Q=adc_spi.shift_out.out[6]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[8] E=$abc$1398$n2 Q=adc_spi.shift_out.out[7]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[9] E=$abc$1398$n2 Q=adc_spi.shift_out.out[8]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[10] E=$abc$1398$n2 Q=adc_spi.shift_out.out[9]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[11] E=$abc$1398$n2 Q=adc_spi.shift_out.out[10]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[12] E=$abc$1398$n2 Q=adc_spi.shift_out.out[11]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[13] E=$abc$1398$n2 Q=adc_spi.shift_out.out[12]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[14] E=$abc$1398$n2 Q=adc_spi.shift_out.out[13]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=adc_spi.shift_out.out[15] E=$abc$1398$n2 Q=adc_spi.shift_out.out[14]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=adc_spi.SCLK D=PIN_9 E=$abc$1398$n2 Q=adc_spi.shift_out.out[15]
+.attr src "top.v:31|adc-spi.v:22|shift_reg.v:10|/home/fdu/.apio/packages/toolchain-icestorm/bin/../share/yosys/ice40/cells_map.v:8"
 .names adc_spi.DV PIN_1
 1 1
 .names adc_spi.SCLK PIN_2

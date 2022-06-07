@@ -17,7 +17,6 @@ module ADC_SPI #(parameter CLKS_PER_HALF_BIT = 2)
     reg init = 1'b1;
     reg [8:0]count = 9'b0000000;
     reg [$clog2(CLKS_PER_HALF_BIT*2)-1:0] r_SPI_count_clk;
-    reg [4:0] r_SPI_count_pulse = 5'b00000;
     wire [15:0] w_data_o;
 
     shift_reg shift_out
@@ -35,7 +34,6 @@ module ADC_SPI #(parameter CLKS_PER_HALF_BIT = 2)
     end
     always @(posedge CLOCK)
     begin    
-        r_Data_in <= DATA_IN;
         if(count % CLKS_PER_HALF_BIT == 0)
             SCLK <= ~SCLK;
         if(count == CLKS_PER_HALF_BIT*2*2)
@@ -44,7 +42,6 @@ module ADC_SPI #(parameter CLKS_PER_HALF_BIT = 2)
         begin
             count = 0;
             CS <= 1'b1;
-            r_SPI_count_pulse <= 0;
         end
         if(count == 0)
             DV <= 1'b1;
