@@ -67,15 +67,15 @@ module SPI_Master_With_Single_CS
 
 
 
-  reg [7:0] count = 8'b00000000;
+  reg count = 1'b0;
   reg [7:0] data_0 = i_TX_Byte[15:8];
   reg [7:0] data_1 = i_TX_Byte[7:0];
-  reg [1:0] r_SM_CS;
+  reg [1:0] r_SM_CS = IDLE;
   reg [7:0] internal_data;
-  reg r_CS_n;
+  reg r_CS_n = 1'b1;
   reg [3:0] wait_idle = 4'b1000;
   reg [3:0] r_CS_Inactive_Count = 4'b0000;
-  reg [$clog2(MAX_BYTES_PER_CS+1)-1:0] r_TX_Count;
+  reg [1:0] r_TX_Count;
   wire w_Master_Ready;
   reg internal_DV = 1'b0;
 
@@ -107,32 +107,96 @@ module SPI_Master_With_Single_CS
 
 always @(posedge i_Clk)
 begin
-  if(i_TX_DV)
-    begin
-      count = 0;
-      r_CS_n <= 1'b0;
-      internal_data <= data_0;
-    end
-
-  if(count == 4 )
-    begin
-      internal_DV <= 1'b1;
-    end
-  else
-    begin
-      internal_DV <= 1'b0;
-    end
-  if(count == 2*2* CLKS_PER_HALF_BIT+ 4*2*CLKS_PER_HALF_BIT + 2*8*CLKS_PER_HALF_BIT)
-  begin
-    internal_data <= data_1;
-    internal_DV <= 1;
-  end
-  if(count == 4 * 4*2*CLKS_PER_HALF_BIT+2*8*CLKS_PER_HALF_BIT)
-    begin
-      r_CS_n <= 1'b1;
-    end
-  count = count + 1'b1;
-  //o_SPI_CS_n <= r_CS_n;
+  case (r_SM_CS)
+    IDLE:
+        begin
+          if (r_CS_n & i_TX_DV) // Start of transmission
+          begin
+            r_TX_Count <= 2'b11; // Register TX Count
+            r_CS_n     <= 1'b0;       // Drive CS low
+            internal_data <= data_0;
+            internal_DV <= 1'b1;
+            r_SM_CS    <= TRANSFER;   // Transfer bytes
+          end
+        end
+    TRANSFER:
+        begin
+          // Wait until SPI is done transferring do next thing
+          if (w_Master_Ready)
+          begin
+            if (r_TX_Count > 0)
+            begin   
+                internal_data <= data_1;
+                internal_DV <= 1'b1;
+                r_TX_Count <= r_TX_Count - 1'b1;
+            end
+            else
+            begin
+              r_CS_Inactive_Count <= CS_INACTIVE_CLKS;
+              r_SM_CS             <= CS_INACTIVE;
+            end // else: !if(r_TX_Count > 0)
+          end // if (w_Master_Ready)
+          internal_data <= i_TX_Byte[(r_TX_Count*8)-1:(r_TX_Count-1)*8];
+          internal_DV <= 1'b0;
+        end // case: TRANSFER
+        CS_INACTIVE:
+        begin
+          if (r_CS_Inactive_Count > 0)
+          begin
+            r_CS_Inactive_Count <= r_CS_Inactive_Count - 1'b1;
+          end
+          else
+          begin
+            r_CS_n  <= 1'b1; // we done, so set CS high
+            r_SM_CS <= IDLE;
+          end
+        end
+  endcase
+  /*case (r_SM_CS)
+    IDLE : 
+      begin
+        if(i_TX_DV == 1)
+        begin
+          r_SM_CS <= START_TRANSFER;
+        end
+        r_CS_n <= 1'b1;
+        internal_DV <= 1'b0;
+        count <= 2'b10; 
+      end
+    START_TRANSFER : 
+      begin
+        if(count > 0)
+        begin
+          r_CS_n <= 1'b0;   
+          internal_data = i_TX_Byte[(count*8)-1:(count-1)*8];
+          internal_DV <= 1'b1;
+          count <= count - 1'b1;
+          r_SM_CS <= TRANSFER;
+        end
+        else
+        begin
+          r_SM_CS <= IDLE;
+        end
+      end
+    TRANSFER : 
+      begin
+        if(w_Master_Ready)
+        begin
+          r_SM_CS <= START_TRANSFER;
+        end
+        else
+        begin
+          r_SM_CS <= IDLE;
+        end
+      end
+      default : 
+      begin 
+        internal_DV <= 1'b0;
+        count <= 2'b10; 
+        r_CS_n <= 1'b1;
+        r_SM_CS <= IDLE;
+      end
+  endcase // r_SM_CS*/
 end
 
 

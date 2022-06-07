@@ -10,7 +10,7 @@ module shift_reg #(parameter MSB = 16)
 always @(posedge clk)
 begin
 	if (~en)
-		out <= {d, out[MSB-1:1]};
+		out <= {out[MSB-2:0], d};
 	else
 		out <= out;
 end

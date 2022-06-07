@@ -2,12 +2,10 @@ module top(
 	input CLK,
 	input PIN_1, 
 	input PIN_2,
-	output PIN_3, 
-	output PIN_4,
-	output PIN_5,
-	output PIN_6,
-	output PIN_7,
-	output PIN_8
+	output PIN_8,
+	output PIN_14,
+	output PIN_15,
+	output PIN_16,
 	);
 
 
@@ -27,16 +25,16 @@ reg [1:0] r_Master_TX_Count = 2'b10;
 	.i_TX_Count(r_Master_TX_Count),
 	.i_TX_Byte(r_TX_Byte),
 	.i_TX_DV(r_DV),
-	.o_TX_Ready(PIN_3),
+	.o_TX_Ready(),
 
 	//.o_RX_Count(w_Master_RX_Count),
-	.o_RX_DV(PIN_4),
+	.o_RX_DV(),
 	.o_RX_Byte(r_RX_Byte),
 
-	.o_SPI_Clk(PIN_5),
+	.o_SPI_Clk(PIN_14),
 	.i_SPI_MISO(PIN_1),
-	.o_SPI_MOSI(PIN_6),
-	.o_SPI_CS_n(PIN_7)
+	.o_SPI_MOSI(PIN_15),
+	.o_SPI_CS_n(PIN_16)
 	);
 
 
