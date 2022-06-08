@@ -36,7 +36,7 @@ module SPI_Master_With_Single_CS
   #(parameter SPI_MODE = 0,
     parameter CLKS_PER_HALF_BIT = 2,
     parameter MAX_BYTES_PER_CS = 2,
-    parameter CS_INACTIVE_CLKS = 1)
+    parameter CS_INACTIVE_CLKS = 30)
   (
    // Control/Data Signals,
    input        i_Rst_L,     // FPGA Reset
@@ -52,7 +52,7 @@ module SPI_Master_With_Single_CS
    output reg [$clog2(MAX_BYTES_PER_CS+1)-1:0] o_RX_Count,  // Index RX byte
    output       o_RX_DV,     // Data Valid pulse (1 clock cycle)
    output [7:0] o_RX_Byte,   // Byte received on MISO
-
+   output master_ready,
    // SPI Interface
    output o_SPI_Clk,
    input  i_SPI_MISO,
@@ -61,22 +61,23 @@ module SPI_Master_With_Single_CS
    );
 
   localparam IDLE        = 2'b00;
-  localparam START_TRANSFER    = 2'b01;
+  localparam TRANSFER_2    = 2'b01;
   localparam TRANSFER = 2'b10;
   localparam CS_INACTIVE = 2'b11;
 
 
 
-  reg count = 1'b0;
+  reg [1:0] count = 2'b00;
   reg [7:0] data_0 = i_TX_Byte[15:8];
   reg [7:0] data_1 = i_TX_Byte[7:0];
   reg [1:0] r_SM_CS = IDLE;
   reg [7:0] internal_data;
   reg r_CS_n = 1'b1;
   reg [3:0] wait_idle = 4'b1000;
-  reg [3:0] r_CS_Inactive_Count = 4'b0000;
-  reg [1:0] r_TX_Count;
+  reg [3:0] r_CS_Inactive_Count;
+  reg r_TX_Count;
   wire w_Master_Ready;
+  wire data_valid_pulse;
   reg internal_DV = 1'b0;
 
   // Instantiate Master
@@ -95,7 +96,7 @@ module SPI_Master_With_Single_CS
    .o_TX_Ready(w_Master_Ready),   // Transmit Ready for Byte
    
    // RX (MISO) Signals
-   .o_RX_DV(),       // Data Valid pulse (1 clock cycle)
+   .o_RX_DV(data_valid_pulse),       // Data Valid pulse (1 clock cycle)
    .o_RX_Byte(o_RX_Byte),   // Byte received on MISO
 
    // SPI Interface
@@ -105,41 +106,37 @@ module SPI_Master_With_Single_CS
    );
 
 
-always @(posedge i_Clk)
+always @(negedge i_Clk)
 begin
   case (r_SM_CS)
     IDLE:
         begin
           if (r_CS_n & i_TX_DV) // Start of transmission
           begin
-            r_TX_Count <= 2'b11; // Register TX Count
+            count <= 2'b10; // Register TX Count
             r_CS_n     <= 1'b0;       // Drive CS low
             internal_data <= data_0;
             internal_DV <= 1'b1;
+            r_TX_Count <= 1'b1;
             r_SM_CS    <= TRANSFER;   // Transfer bytes
           end
+          else r_CS_n  <= 1'b1;
         end
     TRANSFER:
         begin
           // Wait until SPI is done transferring do next thing
           if (w_Master_Ready)
-          begin
-            if (r_TX_Count > 0)
-            begin   
-                internal_data <= data_1;
-                internal_DV <= 1'b1;
-                r_TX_Count <= r_TX_Count - 1'b1;
+            begin
+                r_CS_Inactive_Count <= CS_INACTIVE_CLKS;
+                r_SM_CS <= CS_INACTIVE;
             end
             else
             begin
-              r_CS_Inactive_Count <= CS_INACTIVE_CLKS;
-              r_SM_CS             <= CS_INACTIVE;
-            end // else: !if(r_TX_Count > 0)
-          end // if (w_Master_Ready)
-          internal_data <= i_TX_Byte[(r_TX_Count*8)-1:(r_TX_Count-1)*8];
-          internal_DV <= 1'b0;
+            internal_DV <= 1'b0;
+          end
         end // case: TRANSFER
-        CS_INACTIVE:
+
+    CS_INACTIVE:
         begin
           if (r_CS_Inactive_Count > 0)
           begin
@@ -147,7 +144,15 @@ begin
           end
           else
           begin
-            r_CS_n  <= 1'b1; // we done, so set CS high
+            // we done, so set CS high
+            if(r_TX_Count == 1)
+            begin
+              internal_data <= data_1;
+              internal_DV <= 1'b1;
+              r_TX_Count <= 1'b0;
+              r_SM_CS <= TRANSFER;
+            end
+            else
             r_SM_CS <= IDLE;
           end
         end
@@ -201,7 +206,8 @@ end
 
 
 assign o_SPI_CS_n = r_CS_n ;
-  
+assign o_TX_Ready  = ((r_SM_CS == IDLE) | (r_SM_CS == TRANSFER && w_Master_Ready == 1'b1 && r_TX_Count > 0)) & ~i_TX_DV;
+assign master_ready = w_Master_Ready;
 
 endmodule // SPI_Master_With_Single_CS
 

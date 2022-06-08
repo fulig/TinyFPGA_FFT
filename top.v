@@ -23,12 +23,13 @@ reg [15:0] out_7;
 
 
 reg r_Rst = 1'b1;
-reg [1:0] w_Master_RX_Count = 2'b01;
-reg [1:0] r_Master_TX_Count = 2'b10;
+wire w_Master_RX_Count;
+reg [1:0] r_Master_TX_Count = 2'b11;
 reg [7:0] r_RX_Byte; 
 
 wire w_sample;
 wire data_valid;
+wire tx_ready;
 wire [15:0]adc_data;
 wire [15:0]test_out;
 wire [15:0]pos2neg;
@@ -75,12 +76,12 @@ SPI_Master_With_Single_CS test
     .i_TX_Count(r_Master_TX_Count),
     .i_TX_Byte(adc_data[15:0]),
     .i_TX_DV(data_valid),
-    .o_TX_Ready(),
+    .o_TX_Ready(tx_ready),
 
-    //.o_RX_Count(w_Master_RX_Count),
+    .o_RX_Count(),
     .o_RX_DV(),
     .o_RX_Byte(r_RX_Byte),
-
+    .master_ready(PIN_1),
     .o_SPI_Clk(PIN_14),
     .i_SPI_MISO(PIN_1),
     .o_SPI_MOSI(PIN_15),
@@ -100,6 +101,6 @@ N_bit_adder adder_0
     .answer(test_out)
     );*/
 
-assign PIN_1 = data_valid;
-//assign PIN_14 = w_sample;
+//assign PIN_1 = data_valid;
+//assign PIN_1 = tx_ready;
 endmodule
