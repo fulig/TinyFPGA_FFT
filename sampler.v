@@ -5,7 +5,7 @@ module SAMPLER
 	output reg sample
 	);
 
-reg [8:0] count = 9'b000000000;
+reg [$clog2(COUNT_TO):0] count = 0;
 
 initial begin
 	count <= 1'b0;

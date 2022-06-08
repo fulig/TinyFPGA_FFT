@@ -36,7 +36,7 @@ module SPI_Master_With_Single_CS
   #(parameter SPI_MODE = 0,
     parameter CLKS_PER_HALF_BIT = 2,
     parameter MAX_BYTES_PER_CS = 2,
-    parameter CS_INACTIVE_CLKS = 30)
+    parameter CS_INACTIVE_CLKS = 5)
   (
    // Control/Data Signals,
    input        i_Rst_L,     // FPGA Reset
@@ -74,8 +74,9 @@ module SPI_Master_With_Single_CS
   reg [7:0] internal_data;
   reg r_CS_n = 1'b1;
   reg [3:0] wait_idle = 4'b1000;
-  reg [3:0] r_CS_Inactive_Count;
+  reg [5:0] r_CS_Inactive_Count;
   reg r_TX_Count;
+  reg wait_after_cs;
   wire w_Master_Ready;
   wire data_valid_pulse;
   reg internal_DV = 1'b0;
@@ -115,10 +116,10 @@ begin
           begin
             count <= 2'b10; // Register TX Count
             r_CS_n     <= 1'b0;       // Drive CS low
-            internal_data <= data_0;
-            internal_DV <= 1'b1;
             r_TX_Count <= 1'b1;
-            r_SM_CS    <= TRANSFER;   // Transfer bytes
+            wait_after_cs <= 1'b1;
+            r_CS_Inactive_Count <= CS_INACTIVE_CLKS;
+            r_SM_CS <= CS_INACTIVE;   // Transfer bytes
           end
           else r_CS_n  <= 1'b1;
         end
@@ -144,8 +145,15 @@ begin
           end
           else
           begin
+            if(wait_after_cs == 1)
+            begin
+              internal_data <= data_0;
+              internal_DV <= 1'b1;
+              wait_after_cs <= 1'b0;
+              r_SM_CS <= TRANSFER;
+            end
             // we done, so set CS high
-            if(r_TX_Count == 1)
+            else if(r_TX_Count == 1)
             begin
               internal_data <= data_1;
               internal_DV <= 1'b1;

@@ -47,7 +47,9 @@ ADC_SPI adc_spi
         .DATA_OUT(adc_data[15:0])
         );
 
-SAMPLER sample(
+SAMPLER #(.COUNT_TO(600)) // default: 382
+sample
+(
     .clk(CLK),
     .sample(w_sample)
     );
