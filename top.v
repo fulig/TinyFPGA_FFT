@@ -27,6 +27,7 @@ wire w_Master_RX_Count;
 reg [1:0] r_Master_TX_Count = 2'b11;
 reg [7:0] r_RX_Byte; 
 
+
 wire w_sample;
 wire data_valid;
 wire tx_ready;
@@ -47,7 +48,7 @@ ADC_SPI adc_spi
         .DATA_OUT(adc_data[15:0])
         );
 
-SAMPLER #(.COUNT_TO(600)) // default: 382
+SAMPLER #(.COUNT_TO(1000)) // default: 382
 sample
 (
     .clk(CLK),
