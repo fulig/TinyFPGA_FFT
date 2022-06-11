@@ -1,16 +1,16 @@
 module shift_16Bit
 	(
-		input [15:0] data,
+		input [7:0] data,
 		input clk,
 		input en,
-		output reg  [15:0] out_0 ,
-		output reg  [15:0] out_1 ,
-		output reg  [15:0] out_2 ,
-		output reg  [15:0] out_3 ,
-		output reg  [15:0] out_4 ,
-		output reg  [15:0] out_5 ,
-		output reg  [15:0] out_6 ,
-		output reg  [15:0] out_7 
+		output reg  [7:0] out_0 ,
+		output reg  [7:0] out_1 ,
+		output reg  [7:0] out_2 ,
+		output reg  [7:0] out_3 ,
+		output reg  [7:0] out_4 ,
+		output reg  [7:0] out_5 ,
+		output reg  [7:0] out_6 ,
+		output reg  [7:0] out_7 
 		);
 
 always @(posedge clk)

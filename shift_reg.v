@@ -1,4 +1,4 @@
-module shift_reg #(parameter MSB = 16)
+module shift_reg #(parameter MSB = 8)
 	(
 		input d, 
 		input clk,

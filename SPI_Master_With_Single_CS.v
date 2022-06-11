@@ -44,7 +44,7 @@ module SPI_Master_With_Single_CS
    
    // TX (MOSI) Signals
    input [$clog2(MAX_BYTES_PER_CS+1)-1:0] i_TX_Count,  // # bytes per CS low
-   input [15:0]  i_TX_Byte,       // Byte to transmit on MOSI
+   input [7:0]  i_TX_Byte,       // Byte to transmit on MOSI
    input        i_TX_DV,         // Data Valid Pulse with i_TX_Byte
    output       o_TX_Ready,      // Transmit Ready for next byte
    
@@ -68,10 +68,7 @@ module SPI_Master_With_Single_CS
 
 
   reg [1:0] count = 2'b00;
-  reg [7:0] data_0 = i_TX_Byte[15:8];
-  reg [7:0] data_1 = i_TX_Byte[7:0];
   reg [1:0] r_SM_CS = IDLE;
-  reg [7:0] internal_data;
   reg r_CS_n = 1'b1;
   reg [3:0] wait_idle = 4'b1000;
   reg [5:0] r_CS_Inactive_Count;
@@ -79,7 +76,7 @@ module SPI_Master_With_Single_CS
   reg wait_after_cs;
   wire w_Master_Ready;
   wire data_valid_pulse;
-  reg internal_DV = 1'b0;
+
 
   // Instantiate Master
   SPI_Master 
@@ -92,8 +89,8 @@ module SPI_Master_With_Single_CS
    .i_Clk(i_Clk),         // FPGA Clock
    
    // TX (MOSI) Signals
-   .i_TX_Byte(internal_data),         // Byte to transmit
-   .i_TX_DV(internal_DV),             // Data Valid Pulse 
+   .i_TX_Byte(i_TX_Byte),         // Byte to transmit
+   .i_TX_DV(o_TX_Ready),             // Data Valid Pulse 
    .o_TX_Ready(w_Master_Ready),   // Transmit Ready for Byte
    
    // RX (MISO) Signals
@@ -114,12 +111,8 @@ begin
         begin
           if (r_CS_n & i_TX_DV) // Start of transmission
           begin
-            count <= 2'b10; // Register TX Count
             r_CS_n     <= 1'b0;       // Drive CS low
-            r_TX_Count <= 1'b1;
-            wait_after_cs <= 1'b1;
-            r_CS_Inactive_Count <= CS_INACTIVE_CLKS;
-            r_SM_CS <= CS_INACTIVE;   // Transfer bytes
+            r_SM_CS <= TRANSFER;   // Transfer bytes
           end
           else r_CS_n  <= 1'b1;
         end
@@ -131,10 +124,6 @@ begin
                 r_CS_Inactive_Count <= CS_INACTIVE_CLKS;
                 r_SM_CS <= CS_INACTIVE;
             end
-            else
-            begin
-            internal_DV <= 1'b0;
-          end
         end // case: TRANSFER
 
     CS_INACTIVE:
@@ -144,72 +133,12 @@ begin
             r_CS_Inactive_Count <= r_CS_Inactive_Count - 1'b1;
           end
           else
-          begin
-            if(wait_after_cs == 1)
             begin
-              internal_data <= data_0;
-              internal_DV <= 1'b1;
-              wait_after_cs <= 1'b0;
-              r_SM_CS <= TRANSFER;
-            end
-            // we done, so set CS high
-            else if(r_TX_Count == 1)
-            begin
-              internal_data <= data_1;
-              internal_DV <= 1'b1;
-              r_TX_Count <= 1'b0;
-              r_SM_CS <= TRANSFER;
-            end
-            else
             r_SM_CS <= IDLE;
           end
         end
   endcase
-  /*case (r_SM_CS)
-    IDLE : 
-      begin
-        if(i_TX_DV == 1)
-        begin
-          r_SM_CS <= START_TRANSFER;
-        end
-        r_CS_n <= 1'b1;
-        internal_DV <= 1'b0;
-        count <= 2'b10; 
-      end
-    START_TRANSFER : 
-      begin
-        if(count > 0)
-        begin
-          r_CS_n <= 1'b0;   
-          internal_data = i_TX_Byte[(count*8)-1:(count-1)*8];
-          internal_DV <= 1'b1;
-          count <= count - 1'b1;
-          r_SM_CS <= TRANSFER;
-        end
-        else
-        begin
-          r_SM_CS <= IDLE;
-        end
-      end
-    TRANSFER : 
-      begin
-        if(w_Master_Ready)
-        begin
-          r_SM_CS <= START_TRANSFER;
-        end
-        else
-        begin
-          r_SM_CS <= IDLE;
-        end
-      end
-      default : 
-      begin 
-        internal_DV <= 1'b0;
-        count <= 2'b10; 
-        r_CS_n <= 1'b1;
-        r_SM_CS <= IDLE;
-      end
-  endcase // r_SM_CS*/
+
 end
 
 

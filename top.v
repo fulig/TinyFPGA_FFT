@@ -12,14 +12,14 @@ module top
 );
 
 reg [7:0] data_test;
-reg [15:0] out_0;
-reg [15:0] out_1;
-reg [15:0] out_2;
-reg [15:0] out_3;
-reg [15:0] out_4;
-reg [15:0] out_5;
-reg [15:0] out_6;
-reg [15:0] out_7;
+reg [7:0] out_0;
+reg [7:0] out_1;
+reg [7:0] out_2;
+reg [7:0] out_3;
+reg [7:0] out_4;
+reg [7:0] out_5;
+reg [7:0] out_6;
+reg [7:0] out_7;
 
 
 reg r_Rst = 1'b1;
@@ -31,9 +31,9 @@ reg [7:0] r_RX_Byte;
 wire w_sample;
 wire data_valid;
 wire tx_ready;
-wire [15:0]adc_data;
-wire [15:0]test_out;
-wire [15:0]pos2neg;
+wire [7:0]adc_data;
+wire [7:0]test_out;
+wire [7:0]pos2neg;
 
 
 
@@ -45,19 +45,18 @@ ADC_SPI adc_spi
         .DATA_IN(PIN_9),
         .DV(data_valid),
         .SAMPLE  (w_sample),
-        .DATA_OUT(adc_data[15:0])
+        .DATA_OUT(adc_data[7:0])
         );
 
-SAMPLER #(.COUNT_TO(1000)) // default: 382
+SAMPLER #(.COUNT_TO(382)) // default: 382
 sample
 (
     .clk(CLK),
     .sample(w_sample)
     );
-
-/*shift_16Bit shift_1
+shift_16Bit shift_1
 (
-    .data(adc_data[15:0]),
+    .data(adc_data[7:0]),
     .clk(CLK),
     .en(data_valid),
     .out_0(out_0),
@@ -69,7 +68,7 @@ sample
     .out_6(out_6),
     .out_7(out_7)
     );
-*/
+
 
 SPI_Master_With_Single_CS test
 (
@@ -77,7 +76,7 @@ SPI_Master_With_Single_CS test
     .i_Clk(CLK),
 
     .i_TX_Count(r_Master_TX_Count),
-    .i_TX_Byte(adc_data[15:0]),
+    .i_TX_Byte(adc_data[7:0]),
     .i_TX_DV(data_valid),
     .o_TX_Ready(tx_ready),
 
