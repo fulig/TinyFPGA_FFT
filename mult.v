@@ -8,7 +8,7 @@ module multiplier_8Bit
 		output reg [15:0] out
 		);
 
-reg [4:0]count = 0;
+reg [3:0]count = 4'h0;
 reg [1:0] state;
 reg [15:0] p;
 reg [15:0] t;
@@ -46,7 +46,7 @@ begin
 		begin
 			if(start)
 			begin
-				count <= 5'b00000;
+				count <= 4'h0;
 				p <= 16'b0000000000000000;
 				if(input_0[7] == 1'b1)
 				begin
@@ -72,9 +72,11 @@ begin
 
 		MULT :
 		begin
-			if (count == 5'b10000)
+			if (count == 4'hF)
 			begin
-				state <= END;
+				out <= p;
+				data_valid <= 1'b1;
+				state <= INIT;
 			end
 			else if (input_0_exp[count] == 1'b1)
 			begin
@@ -82,13 +84,6 @@ begin
 			end
 			t <= t * 2;
 			count <= count + 1'b1;
-		end
-		END :
-		begin
-			out <= p;
-			count <= 0;
-			data_valid <= 1'b1;
-			state <= INIT;
 		end
 
 	endcase // state
