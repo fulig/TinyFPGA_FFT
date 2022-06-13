@@ -45,7 +45,7 @@ always @ (posedge clk)
 begin
 	case (state)
 		INIT : 
-		begins
+		begin
 			if(start)
 			begin
 				count <= 5'h00;
