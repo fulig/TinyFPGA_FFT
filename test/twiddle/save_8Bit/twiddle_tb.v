@@ -10,13 +10,13 @@ reg [7:0] count;
 reg clk;
 
 
-// beispiel x=70,y=50,c=121, s=39
+// beispiel x=70,y=50,c=60
 
 reg [7:0] data_0 = 8'h46; //x
 reg [7:0] data_1 = 8'h32; //y
-reg [7:0] data_2 = 8'h79; //c
-reg [8:0] data_3 = 9'h0a0; //c+s
-reg [8:0] data_4 = 9'h052; // c-s
+reg [7:0] data_2 = 8'h3C; //c
+reg [7:0] data_3 = 8'h5B; //c+s
+reg [7:0] data_4 = 8'h1D; // c-s
 wire [15:0] out;
 
 

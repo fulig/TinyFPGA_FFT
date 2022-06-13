@@ -1,30 +1,28 @@
-module multiplier_8_9Bit
-	#(parameter N=8, 
-	  parameter M=9	)
+module multiplier_8Bit
 	(
 		input clk,
 		input start,
 		input [7:0] input_0,
-		input [8:0] input_1,
+		input [7:0] input_1,
 		output reg data_valid,
-		output reg [16:0] out
+		output reg [15:0] out
 		);
 
-reg [4:0]count = 5'h00;
+reg [3:0]count = 4'h0;
 reg [1:0] state;
-reg [16:0] p;
-reg [16:0] t;
-reg [16:0] input_0_exp;
-wire [16:0] w_p;
-wire [16:0] w_t;
-wire [16:0] w_o;
+reg [15:0] p;
+reg [15:0] t;
+reg [15:0] input_0_exp;
+wire [15:0] w_p;
+wire [15:0] w_t;
+wire [15:0] w_o;
 
 integer i;
 
 N_bit_adder 
-#(.N(17)) Bit_adder
-(	.input1(w_p[16:0]),
-	.input2(w_t[16:0]),
+#(.N(16)) Bit_16_adder
+(	.input1(w_p[15:0]),
+	.input2(w_t[15:0]),
 	.answer(w_o)
 	);
 
@@ -45,26 +43,26 @@ always @ (posedge clk)
 begin
 	case (state)
 		INIT : 
-		begins
+		begin
 			if(start)
 			begin
-				count <= 5'h00;
-				p <= 0;
+				count <= 4'h0;
+				p <= 16'b0000000000000000;
 				if(input_0[7] == 1'b1)
 				begin
-					input_0_exp[16:0] <= {9'b111111111,input_0[7:0]};
+					input_0_exp[15:0] <= {8'b11111111,input_0[7:0]};
 				end
 				if(input_0[7] == 1'b0)
 				begin
-					input_0_exp[16:0] <= {9'b000000000,input_0[7:0]};
+					input_0_exp[15:0] <= {8'b00000000,input_0[7:0]};
 				end
-				if (input_1[8] == 1'b1)
+				if (input_1[7] == 1'b1)
 				begin
-					t[16:0] <= {8'b11111111,input_1[8:0]};
+					t[15:0] <= {8'b11111111,input_1[7:0]};
 				end
-				if(input_1[8] == 1'b0)
+				if(input_1[7] == 1'b0)
 				begin
-					t[16:0] <= {8'b00000000,input_1[8:0]};
+					t[15:0] <= {8'b00000000,input_1[7:0]};
 				end
 				state <= MULT;
 			end
@@ -74,7 +72,7 @@ begin
 
 		MULT :
 		begin
-			if (count == 5'h10)
+			if (count == 4'hF)
 			begin
 				out <= p;
 				data_valid <= 1'b1;
@@ -82,7 +80,7 @@ begin
 			end
 			else if (input_0_exp[count] == 1'b1)
 			begin
-				p[16:0] <= w_o[16:0];
+				p[15:0] <= w_o[15:0];
 			end
 			t <= t * 2;
 			count <= count + 1'b1;
@@ -91,8 +89,7 @@ begin
 	endcase // state
 end
 
-assign w_p[16:0] = p[16:0];
-assign w_t[16:0] = t[16:0];
+assign w_p = p;
+assign w_t = t;
 
 endmodule // N_bit_multiplier
-
