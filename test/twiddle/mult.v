@@ -12,8 +12,8 @@ module multiplier_8_9Bit
 
 reg [4:0]count = 5'h00;
 reg [1:0] state;
-reg [16:0] p;
-reg [16:0] t;
+reg [16:0] p = 17'b00000000000000000;
+reg [16:0] t = 17'b00000000000000000;
 reg [16:0] input_0_exp;
 wire [16:0] w_p;
 wire [16:0] w_t;
@@ -36,8 +36,8 @@ initial begin
 	data_valid <= 1'b0;
 	count <= 0;
 	state <= INIT;
-	p <= 0;
-	t <= 0;
+	p <= 17'b00000000000000000;
+	t <= 17'b00000000000000000;
 end
 
 

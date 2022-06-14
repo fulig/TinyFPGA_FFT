@@ -43,7 +43,7 @@ module SPI_Master_With_Single_CS
    input        i_Clk,       // FPGA Clock
    
    // TX (MOSI) Signals
-   //input [$clog2(MAX_BYTES_PER_CS+1)-1:0] i_TX_Count,  // # bytes per CS low
+   input [$clog2(MAX_BYTES_PER_CS+1)-1:0] i_TX_Count,  // # bytes per CS low
    input [7:0]  i_TX_Byte,       // Byte to transmit on MOSI
    input        i_TX_DV,         // Data Valid Pulse with i_TX_Byte
    output       o_TX_Ready,      // Transmit Ready for next byte
@@ -72,6 +72,7 @@ module SPI_Master_With_Single_CS
   reg r_CS_n = 1'b1;
   reg [3:0] wait_idle = 4'b1000;
   reg [5:0] r_CS_Inactive_Count;
+  reg r_TX_Count;
   reg wait_after_cs;
   wire w_Master_Ready;
   wire data_valid_pulse;
@@ -142,7 +143,7 @@ end
 
 
 assign o_SPI_CS_n = r_CS_n ;
-assign o_TX_Ready  = ((r_SM_CS == IDLE) | (r_SM_CS == TRANSFER && w_Master_Ready == 1'b1)) & ~i_TX_DV;
+assign o_TX_Ready  = ((r_SM_CS == IDLE) | (r_SM_CS == TRANSFER && w_Master_Ready == 1'b1 && r_TX_Count > 0)) & ~i_TX_DV;
 assign master_ready = w_Master_Ready;
 
 endmodule // SPI_Master_With_Single_CS
