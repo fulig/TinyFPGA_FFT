@@ -25,12 +25,12 @@ wire [8:0] w_d_im;
 wire [8:0] w_e_re;
 wire [8:0] w_e_im;
 
-twiddle_mult twid_mult_test
+twiddle_mult twid_mult
 (
 	.clk(clk),
 	.start(start_calc),
-	.i_x(w_d_re[8:1]),
-	.i_y(w_d_im[8:1]),
+	.i_x(w_e_re[8:1]),
+	.i_y(w_e_im[8:1]),
 	.i_c(i_C),
 	.i_c_plus_s(C_plus_S),
 	.i_c_minus_s(C_minus_S),
