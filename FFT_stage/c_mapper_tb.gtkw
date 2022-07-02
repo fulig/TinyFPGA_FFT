@@ -1,25 +1,33 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Sat Jul  2 09:50:21 2022
+[*] Sat Jul  2 12:25:22 2022
 [*]
 [dumpfile] "/home/misterdulister/Coding/TinyFPGA_FFT/FFT_stage/c_mapper_tb.vcd"
-[dumpfile_mtime] "Sat Jul  2 09:50:14 2022"
-[dumpfile_size] 14355
+[dumpfile_mtime] "Sat Jul  2 12:25:13 2022"
+[dumpfile_size] 23758
 [savefile] "/home/misterdulister/Coding/TinyFPGA_FFT/FFT_stage/c_mapper_tb.gtkw"
 [timestart] 0
-[size] 1000 600
-[pos] 1865 153
-*0.000000 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1920 1200
+[pos] 1600 0
+*-9.000000 504 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_c_mapper.
+[treeopen] tb_c_mapper.cmap.
 [sst_width] 233
 [signals_width] 150
 [sst_expanded] 1
-[sst_vpaned_height] 144
-@28
+[sst_vpaned_height] 352
+@800028
 tb_c_mapper.cmap.count_c[2:0]
-@22
-tb_c_mapper.cmap.count_data[3:0]
-@23
-tb_c_mapper.cmap.stage_data[3:0]
+@28
+(0)tb_c_mapper.cmap.count_c[2:0]
+(1)tb_c_mapper.cmap.count_c[2:0]
+(2)tb_c_mapper.cmap.count_c[2:0]
+@1001200
+-group_end
+@28
+tb_c_mapper.cmap.count_data[2:0]
+tb_c_mapper.cmap.stage_data[2:0]
+@29
+tb_c_mapper.cmap.stage[1:0]
 [pattern_trace] 1
 [pattern_trace] 0
