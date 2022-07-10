@@ -18,12 +18,13 @@ module top
     output PIN_18,
     output PIN_17
 );
+parameter WAIT_TIL_NEXT_TX=100;
 
 reg [7:0] W0_c = 8'h7F;
 reg [8:0] W0_cps = 9'h07F;
 reg [8:0] W0_cms = 9'h07F;
 
-reg [7:0] W1_c = 8'h5A;
+reg [7:0] W1_c = 8'h5A; 
 reg [8:0] W1_cps = 9'h000;
 reg [8:0] W1_cms = 9'h0B4;
 
@@ -165,7 +166,7 @@ bfprocessor bf_stage1_1_5
 (
     .clk(CLK),
     .start_calc(w_sample),
-    .data_valid(data_),
+    .data_valid(),
     .A_re(data_1),
     .A_im(w_zero_im),
     .B_re(data_5),
@@ -372,43 +373,39 @@ ADC_SPI adc_spi
         .DATA_OUT(adc_data[7:0])
         );
 
-SAMPLER #(.COUNT_TO(382)) // default: 382
+SAMPLER #(.COUNT_TO(200000)) // default: 382
 sample
 (
     .clk(CLK),
     .sample(w_sample)
     );
 
+reg [7:0] data_tx = 8'h00;
+reg [7:0] read_data = 16'h0000;
+reg [7:0] count_wait = 16'h0000;
 
-
-SPI_Master_With_Single_CS test
+SPI_Master_With_Single_CS spi_master
 (
-    .i_Rst_L(r_Rst),
+    .i_Rst_L(1'b1),
     .i_Clk(CLK),
 
-    .i_TX_Count(r_Master_TX_Count),
-    .i_TX_Byte(adc_data[7:0]),
-    .i_TX_DV(data_valid),
-    .o_TX_Ready(tx_ready),
+    .i_TX_Byte(w_read_data[7:0]),
+    .i_TX_DV(start_tx),
+    .o_TX_Ready(w_tx_ready),
 
-    .o_RX_Count(),
-    .o_RX_DV(),
-    .o_RX_Byte(),
-    .master_ready(PIN_1),
     .o_SPI_Clk(PIN_14),
-    .i_SPI_MISO(PIN_1),
     .o_SPI_MOSI(PIN_15),
     .o_SPI_CS_n(PIN_16)
     );
 
-
-reg write_en = 1'b1;
-reg read_en = 1'b1;
+reg write_en = 1'b0;
+reg read_en = 1'b0;
 reg [15:0] write_data;
 reg [7:0] write_addr;
 wire [15:0] w_read_data;
+wire w_tx_ready;
 
-SB_RAM40_4K #(.READ_MODE(1), .WRITE_MODE(0),
+SB_RAM40_4K #(.READ_MODE(0), .WRITE_MODE(0),
 .INIT_0(256'h0000000000000000000000000000000000000000000000000000000000000000))
 ram40_4kinst_physical (
 .RDATA(w_read_data),
@@ -417,10 +414,11 @@ ram40_4kinst_physical (
 .RCLK(CLK),
 .RE(read_en),
 .WDATA(write_data),
-.WADDR(write_addr),
+.WADDR({3'b000,write_addr[7:0]}),
 .WE(write_en),
 .WCLK(CLK),
-.WCLKE(1'b1)
+.WCLKE(1'b1),
+.MASK(16'h0000)
 );
 
 localparam IDLE = 2'b00;
@@ -428,8 +426,16 @@ localparam CALC_FFT = 2'b01;
 localparam STORE_DATA = 2'b10;
 localparam SEND_DATA = 2'b00;
 
-reg [1:0] top_state = IDLE;
+localparam SET_TRANSMIT = 2'b01;
+localparam TRANSMIT = 2'b10;
+localparam WAIT = 2'b11;
 
+reg [1:0] top_state = IDLE;
+reg [1:0] spi_state = IDLE;
+
+reg [1:0] spi_count = 8'h00;
+reg spi_start = 1'b0;
+reg start_tx = 1'b0;
 
 always @(posedge CLK)
 begin
@@ -440,34 +446,129 @@ begin
                 begin
                     top_state <=CALC_FFT;
                 end
+            write_en <= 1'b0;
         end
         CALC_FFT : 
         begin
             if(fft_ready)
                 begin
+                    write_addr <= 8'h00;
+                    write_data = w_out_0_re;
+                    write_en <= 1'b1;
                     top_state <= STORE_DATA;
                 end
         end
         STORE_DATA :
         begin
-            
+            if(write_addr == 15)
+            begin
+                write_en <= 1'b0;
+                spi_start <= 1'b1;
+                top_state <= SEND_DATA;
+            end
+            else
+            begin
+            case (write_addr)
+                //0: write_data <= w_out_0_re;
+                0: write_data <= w_out_0_im;
+                1: write_data <= w_out_1_re;
+                2: write_data <= w_out_1_im; 
+                3: write_data <= w_out_2_re;
+                4: write_data <= w_out_2_im;
+                5: write_data <= w_out_3_re;
+                6: write_data <= w_out_3_im;
+                7: write_data <= w_out_4_re;
+                8: write_data <= w_out_4_im;
+                9: write_data <= w_out_5_re;
+                10: write_data <= w_out_5_im;
+                11: write_data <= w_out_6_re;
+                12: write_data <= w_out_6_im;
+                13: write_data <= w_out_7_re;
+                14: write_data <= w_out_7_im;
+            endcase // write_addr*/
+            end
+            //write_en <= 1'b1;
+            write_addr <= write_addr + 1;
         end
         SEND_DATA :
         begin
-            
+            spi_start <= 1'b0;
+            if(spi_state == IDLE)
+            begin
+                top_state <= IDLE;
+            end
         end
     endcase // top_state
 end
 
+always @(posedge CLK)
+begin
+    case(spi_state)
+        IDLE:
+        begin
+            if(fft_ready)
+            begin
+                read_en <= 1'b1;
+                data_tx[7:0] <= read_data[7:0];
+                spi_state <= SET_TRANSMIT;
+            end
+            count <= 8'h00;
+            start_tx <= 1'b0;
+        end
+
+        SET_TRANSMIT:
+        begin
+            count = count +1'b1;
+            //data_tx[7:0] <= w_read_data[7:0];
+            start_tx <= 1'b1;
+            spi_state <= TRANSMIT;
+        end
+
+        TRANSMIT:
+        begin
+            if(PIN_16)
+            begin
+                count_wait <= WAIT_TIL_NEXT_TX;
+                spi_state <= WAIT;
+            end
+            start_tx <= 1'b0;
+        end
+
+        WAIT:
+        begin
+            if(count_wait>0)
+            begin
+                count_wait <= count_wait - 1'b1;
+            end
+            else
+                begin
+                    if(count == 16)
+                    begin
+                        spi_state <= IDLE;
+                    end
+                    else
+                    begin
+                        spi_state <= SET_TRANSMIT;
+                    end
+                end
+        end
+    endcase // state
+end
+
+always @(*)
+begin
+read_data[7:0] = w_read_data[7:0];
+end
+
 assign w_zero_im[7:0] = zero_im[7:0];
-//assign PIN_1 = data_valid;
+assign PIN_1 = w_sample;
 //assign PIN_1 = tx_ready;
 /*assign w_count[7:0] = count[7:0];*/
 assign PIN_24 = w_out_0_re[7];
 assign PIN_23 = w_out_0_re[6];
 assign PIN_22 = w_out_0_re[5];
 assign PIN_21 = w_out_0_re[4];
-assign PIN_20 = w_out_0_re[3];
+assign PIN_20 = fft_ready;
 assign PIN_19 = w_out_0_re[2];
 assign PIN_18 = w_out_0_re[1];
 assign PIN_17 = w_out_0_re[0];

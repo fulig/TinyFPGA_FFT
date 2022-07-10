@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sat Jul  9 05:33:20 2022
+[*]
+[dumpfile] "/home/misterdulister/Coding/TinyFPGA_FFT/FFT_stage/c_reg_tb.vcd"
+[dumpfile_mtime] "Sat Jul  9 05:32:18 2022"
+[dumpfile_size] 440173
+[savefile] "/home/misterdulister/Coding/TinyFPGA_FFT/FFT_stage/c_reg_tb.gtkw"
+[timestart] 0
+[size] 1536 836
+[pos] -39 27
+*-22.000000 18740000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_reg_stage.
+[treeopen] tb_reg_stage.reg_stage.
+[treeopen] tb_reg_stage.reg_stage.test_fft_stage.
+[treeopen] tb_reg_stage.reg_stage.test_fft_stage.bfs[0].
+[treeopen] tb_reg_stage.reg_stage.test_fft_stage.bfs[6].
+[sst_width] 233
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 511
+@22
+tb_reg_stage.mux_1.data_bus[31:0]
+tb_reg_stage.mux_1.data_out[15:0]
+tb_reg_stage.mux_0.data_bus[255:0]
+@23
+tb_reg_stage.mux_0.data_out[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

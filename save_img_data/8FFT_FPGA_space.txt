@@ -1,0 +1,10 @@
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:  4024/ 7680    52%
+Info: 	        ICESTORM_RAM:     1/   32     3%
+Info: 	               SB_IO:    16/  256     6%
+Info: 	               SB_GB:     8/    8   100%
+Info: 	        ICESTORM_PLL:     0/    2     0%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+
+

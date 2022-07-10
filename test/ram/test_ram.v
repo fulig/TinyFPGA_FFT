@@ -11,8 +11,7 @@ module test_ram
 	output PIN_17
 	);
 
-reg [15:0] read_data;
-reg [15:0] write_data;
+
 reg [7:0] read_addr;
 reg [7:0] write_addr;
 
@@ -33,7 +32,7 @@ wire w_en;
 
 SB_RAM40_4K #(.WRITE_MODE(0),
 	.READ_MODE(0),
-	.INIT_0(256'h0102030405060708090A0B0C0D0E0F)
+	.INIT_0(256'h000A0007000600050004000300020001)
 	)
 ram40_4kinst_physical (
 .RDATA(w_read_data),
@@ -47,6 +46,9 @@ ram40_4kinst_physical (
 .WE(1'b1)
 );
 
+//256'h0102030405060708090A0B0C0D0E0F
+//256'h0F0E0D0C0B0A090807060504030201
+
 //defparam ram40_4kinst_physical.READ_MODE=0;
 //defparam ram40_4kinst_physical.WRITE_MODE=0;
 //defparam ram40_4kinst_physical.INIT_0 = 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0
@@ -54,20 +56,16 @@ ram40_4kinst_physical (
 //0102030405060708090FFFFFFFFFFFFFFFFFFFFFFFFFFFF90807060504030201
 always @ (posedge CLK)
 begin
-	read_addr[7:0] <= count[7:0];
+	//read_addr[7:0] <= count[7:0];
 	//write_addr[7:0] <= count[7:0];
 	//write_data[15:0] <= count[7:0];
 	count = count +1'b1;
 end
 
-assign rclk_en = 1'b1;
-assign wclk_en = 1'b1;
-assign r_en = 1'b1;
-assign w_en = 1'b1;
 
-assign w_read_addr[7:0] = read_addr[7:0];
+assign w_read_addr = count;
 assign w_write_addr[7:0] = write_addr[7:0];
-assign w_write_data[15:0] = write_data[15:0];
+//assign w_write_data[15:0] = write_data[15:0];
 
 assign PIN_24 = w_read_data[0];
 assign PIN_23 = w_read_data[1];

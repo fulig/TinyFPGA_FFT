@@ -7,26 +7,31 @@ module index_mapper #(parameter MSB = 8)
 
 integer i;
 reg [MSB-1:0] tmp;
-reg [MSB-1:0] in;
+reg [MSB/2-1:0]stage_plus; 
 
 always @(*)
 begin
-	//tmp <= index_in;
-	/*for(i=0;i<stage;i=i+1)
+	stage_plus <= stage +1'b1;
+	if (stage <= MSB/2)
 	begin
-		tmp[i+MSB-stage] <= index_in[MSB-1-i];
-	end*/
-	for(i=0;i<MSB;i=i+1)
-	begin
-		if(i>=MSB-stage)
+		for(i=0;i<MSB;i=i+1)
 		begin
-			tmp[i] <= index_in[MSB-1-stage+(MSB-i)];
-		end
-		else if(i<MSB-stage)
-		begin
-			tmp[i] <= index_in[i];
+			if(i>=MSB-stage_plus)
+			begin
+				tmp[i] <= index_in[MSB-1-stage_plus+(MSB-i)];
+			end
+			else if(i<MSB-stage_plus)
+			begin
+				tmp[i] <= index_in[i];
+			end
 		end
 	end
+	else
+		begin
+			tmp[MSB-1:1] <= index_in[MSB-1:1];
+			tmp[0] <= index_in[MSB-1];
+			tmp[MSB-1] <= index_in[0];
+		end
 end
 assign index_out = tmp;
 endmodule // index_mapper

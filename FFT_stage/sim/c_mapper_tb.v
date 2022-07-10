@@ -5,16 +5,18 @@ module tb_c_mapper;
 
 parameter DURATION = 1000;
 
-reg [15:0] count;
+reg [5:0] count = 0;
 reg start = 1'b0;
+reg [1:0] stage = 0;
 
 reg clk;
 
 c_mapper cmap 
 (
 	.clk(clk),
-	.start(start)
-	);
+	.start(start),
+	.stage(stage)
+		);
 
 always #1 clk <= ~clk;
 
@@ -32,8 +34,9 @@ end
 
 always @ (posedge clk)
 begin
-	count = count + 1'b1;
-	if(count==2)start <= 1'b1;
+	count <= count + 1'b1;
+	if(count%8==0)start <= 1'b1;
+	if(count%16==0)stage <= stage + 1'b1;
 	else start <= 1'b0;
 end
 
