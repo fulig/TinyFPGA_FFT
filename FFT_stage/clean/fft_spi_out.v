@@ -1,5 +1,5 @@
 module fft_spi_out #(parameter N=32,
-	parameter MSB = 8)
+	parameter MSB = 16)
 (
 	input clk,    // Clock
 	input [N*MSB-1:0] data_bus,
@@ -14,7 +14,7 @@ localparam SET_TX = 2'b01;
 localparam SENDING = 2'b10;
 reg [1:0] state = IDLE;
 
-reg [MSB-1:0] send_data;
+reg [MSB/2-1:0] send_data;
 reg start_tx = 0;
 wire w_tx_ready;
 
@@ -33,14 +33,14 @@ SPI_Master_With_Single_CS spi_master
     .o_SPI_CS_n(cs)
     );
 
-reg [$clog2(N)-1:0] addr = 0;
+reg [$clog2(N):0] addr = 0;
 genvar i;
-wire [MSB-1:0] data_out [N-1:0];
+wire [MSB-1:0] data_out [2*N-1:0];
 
 generate
-	for(i=0;i<N;i=i+1)
+	for(i=0;i<2*N;i=i+1)
 	begin
-		assign data_out[i] = data_bus[(i+1)*MSB-1:i*MSB];
+		assign data_out[i] = data_bus[(i+1)*MSB/2-1:i*MSB/2];
 	end
 endgenerate
 
@@ -76,7 +76,7 @@ begin
 		begin
 			if(count_spi == 0)
 			begin
-				if(addr == N-1)
+				if(addr == 2*N-1)
 				begin
 					state = IDLE;
 				end

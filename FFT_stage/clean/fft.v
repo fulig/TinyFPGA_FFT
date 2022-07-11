@@ -25,7 +25,7 @@ reg [$clog2(N/4)-1:0]stage = 0;
 reg [$clog2(N)-1:0]counter_N = 0;
 reg [N*MSB-1:0] output_reg = 0;
 
-fft_reg_stage reg_stage(
+fft_reg_stage #(.N(N)) reg_stage (
 	.clk(clk),
 	.fill_regs(fill_regs), //get values for c, cps and cms.
 	.start_calc(start_calc),

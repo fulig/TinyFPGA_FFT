@@ -65,19 +65,19 @@ cms_rom(
 */
 
 
-ROM_c c_rom
+ROM_c_32 c_rom
 (
 	.out(c_out),
 	.addr(stage_data)
 	);
 
-ROM_cps cps_rom
+ROM_cps_32 cps_rom
 (
 	.out(cps_out),
 	.addr(stage_data)
 	);
 
-ROM_cms cms_rom
+ROM_cms_32 cms_rom
 (
 	.out(cms_out),
 	.addr(stage_data)

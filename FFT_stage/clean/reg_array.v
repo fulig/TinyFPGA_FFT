@@ -22,7 +22,7 @@ end
 generate
 	for(i=0;i<N;i=i+1)
 	begin
-	assign data_out[(i+1)*N-1:N*i] = regs[i];
+	assign data_out[(i+1)*MSB-1:MSB*i] = regs[i];
 	end
 endgenerate
 

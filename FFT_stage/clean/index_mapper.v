@@ -1,13 +1,13 @@
-module index_mapper #(parameter MSB = 8)
+module index_mapper #(parameter MSB = 8, parameter N=16)
 	(
 		input [MSB-1:0] index_in,
-		input [MSB/2 - 1:0] stage,
+		input [$clog2(N/2) - 1:0] stage,
 		output [MSB-1:0]  index_out
 		);
 
 integer i;
 reg [MSB-1:0] tmp;
-reg [MSB/2-1:0]stage_plus; 
+reg [$clog2(N/2)-1:0]stage_plus; 
 
 always @(*)
 begin
