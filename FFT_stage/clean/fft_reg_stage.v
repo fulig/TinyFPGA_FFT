@@ -1,4 +1,4 @@
-module fft_reg_stage #(parameter N=16,
+module fft_reg_stage #(parameter N=32,
 	parameter MSB=16)
 (
 	input clk,

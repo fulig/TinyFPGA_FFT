@@ -93,32 +93,3 @@ end
 endmodule
 
 
-module ROM_sinus_32
-(
-	output[15:0] out,
-	input[3:0] addr
-);
-reg [15:0] out;
-reg [15:0] data[31:0]; 
-always @(*)
-begin
-data[0 ] = 8'h00;data[1 ] = 8'h18;
-data[2 ] = 8'h30;data[3 ] = 8'h46;
-data[4 ] = 8'h59;data[5 ] = 8'h69;
-data[6 ] = 8'h75;data[7 ] = 8'h7c;
-data[8 ] = 8'h7f;data[9 ] = 8'h7c;
-data[10] = 8'h75;data[11] = 8'h69;
-data[12] = 8'h59;data[13] = 8'h46;
-data[14] = 8'h30;data[15] = 8'h18;
-data[16] = 8'h00;data[17] = 8'he8;
-data[18] = 8'hd0;data[19] = 8'hba;
-data[20] = 8'ha7;data[21] = 8'h97;
-data[22] = 8'h8b;data[23] = 8'h84;
-data[24] = 8'h81;data[25] = 8'h84;
-data[26] = 8'h8b;data[27] = 8'h97;
-data[28] = 8'ha7;data[29] = 8'hba;
-data[30] = 8'hd0;data[31] = 8'he8;
-
-out=data[addr];
-end
-endmodule

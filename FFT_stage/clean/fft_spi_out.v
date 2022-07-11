@@ -1,5 +1,5 @@
 module fft_spi_out #(parameter N=32,
-	parameter MSB = 8)
+	parameter MSB = 16)
 (
 	input clk,    // Clock
 	input [N*MSB-1:0] data_bus,
@@ -14,7 +14,7 @@ localparam SET_TX = 2'b01;
 localparam SENDING = 2'b10;
 reg [1:0] state = IDLE;
 
-reg [MSB-1:0] send_data;
+reg [MSB/2-1:0] send_data;
 reg start_tx = 0;
 wire w_tx_ready;
 
