@@ -25,15 +25,16 @@ integer i;
 
 
 // change this when use on real FPGA
-/*SB_RAM40_4K #(.WRITE_MODE(0),
+SB_RAM40_4K #(.WRITE_MODE(0),
 	.READ_MODE(0),
 	.INIT_0(256'h008b00a700d00000003000590075007f)
 	)
 c_rom (
 .RDATA(c_out),
-.RADDR(stage_data),
+.RADDR({8'h00,stage_data}),
 .RCLK(clk),
 .RE(we),
+.RCLKE(1'b1),
 .WE(1'b0)
 );
 SB_RAM40_4K #(.WRITE_MODE(0),
@@ -42,26 +43,28 @@ SB_RAM40_4K #(.WRITE_MODE(0),
 	)
 cps_rom (
 .RDATA(cps_out),
-.RADDR(stage_data),
+.RADDR({8'h00,stage_data}),
 .RCLK(clk),
 .RE(we),
+.RCLKE(1'b1),
 .WE(1'b0)
 );
 SB_RAM40_4K #(.WRITE_MODE(0),
 	.READ_MODE(0),
-	.INIT_2(256'h01bb00000045007f00a500b200a5007f)
+	.INIT_0(256'h01bb00000045007f00a500b200a5007f)
 	)
 cms_rom(
 .RDATA(cms_out),
-.RADDR(stage_data),
+.RADDR({8'h00,stage_data}),
 .RCLK(clk),
 .RE(we),
+.RCLKE(1'b1),
 .WE(1'b0)
 );
 
-*/
 
-//For testing
+
+/*
 ROM_c c_rom
 (
 	.out(c_out),
@@ -79,7 +82,7 @@ ROM_cms cms_rom
 	.out(cms_out),
 	.addr(stage_data)
 	);
-
+*/
 
 
 always @(posedge clk)
