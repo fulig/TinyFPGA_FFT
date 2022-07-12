@@ -1,14 +1,14 @@
-module twiddle_mult
+module twiddle_mult #(parameter MSB=8)
 (
 	input clk,
 	input start,
-	input [7:0]i_x,
-	input [7:0]i_y,
-	input [7:0]i_c,
-	input [8:0]i_c_plus_s,
-	input [8:0]i_c_minus_s,
-	output [7:0]o_Re_out,
-	output [7:0]o_Im_out,
+	input [MSB-1:0]i_x,
+	input [MSB-1:0]i_y,
+	input [MSB-1:0]i_c,
+	input [MSB:0]i_c_plus_s,
+	input [MSB:0]i_c_minus_s,
+	output [MSB-1:0]o_Re_out,
+	output [MSB-1:0]o_Im_out,
 	output data_valid
 	);
 
@@ -28,11 +28,11 @@ wire w_start_mult;
 wire w_mult_dv;
 
 N_bit_adder
-#(.N(9))
+#(.N(MSB+1))
 adder_E(
-	.input1({i_x[7],i_x[7:0]}),
+	.input1({i_x[MSB-1],i_x[MSB-1:0]}),
 	.input2(w_neg_y),
-	.answer(w_add_answer[8:0])
+	.answer(w_add_answer[MSB:0])
 	);
 
 N_bit_adder
@@ -83,10 +83,10 @@ multiplier_8_9Bit multiplier_Z
 	.out(w_mult_z)
 	);
 
-pos_2_neg #(.N(9))
+pos_2_neg #(.N(MSB+1))
 y_neg
 (
-	.pos({i_y[7],i_y[7:0]}),
+	.pos({i_y[MSB-1],i_y[MSB-1:0]}),
 	.neg(w_neg_y)
 	);
 

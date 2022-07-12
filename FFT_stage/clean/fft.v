@@ -5,8 +5,7 @@ module fft #(parameter N=16,
 	input [MSB-1:0] data_in,
 	input [$clog2(N)-1:0] addr,
 	input insert_data, // 1 => addr for input, 0 => addr for output
-	output reg [MSB*N-1:0] data_out,
-	output reg busy,
+	output [MSB*N-1:0] data_out,
 	output reg fft_finish
 );
 
@@ -29,9 +28,8 @@ fft_reg_stage reg_stage(
 	.clk(clk),
 	.fill_regs(fill_regs), //get values for c, cps and cms.
 	.start_calc(start_calc),
-	.we_regs(we_regs),
 	.data_in(w_fft_in),
-	.addr_counter(w_addr[$clog2(N)-1:0]),
+	.addr_counter(w_addr),
 	.stage(stage),
 	.fft_data_out(w_fft_out),
 	.calc_finish(w_calc_finish)
@@ -77,7 +75,6 @@ case (state)
 			begin
 				we_regs <= 1'b1;
 				fill_regs <= 1'b1;
-				busy <= 1'b1;
 				counter_N <= 0;
 				state <= DATA_IN;
 			end
@@ -86,7 +83,6 @@ case (state)
 			fft_finish <= 1'b0;
 			stage <= 0;
 			counter_N <= 0;
-			busy <= 0;
 			sel_in <= 0;
 		end
 	end
@@ -110,8 +106,6 @@ case (state)
 			if(stage==$clog2(N/2))
 			begin
 				fft_finish <= 1'b1;
-				data_out <= w_fft_out;
-				busy <= 1'b0;
 				state <= IDLE;
 			end
 			else begin
@@ -119,6 +113,7 @@ case (state)
 				stage <= stage + 1'b1;
 				counter_N <= 0;
 				fill_regs <= 1'b1;
+				fft_finish <= 1'b0;
 				state <= DATA_IN;
 			end
 		end
@@ -132,6 +127,6 @@ endcase
 end
 
 
-//assign data_out = output_reg;
+assign data_out = w_fft_out;
 
 endmodule // fft

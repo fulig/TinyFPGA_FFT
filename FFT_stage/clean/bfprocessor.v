@@ -11,9 +11,6 @@ module bfprocessor
 		output [7:0] E_re, E_im
 		);
 
-reg [7:0]r_D_re = 8'h00;
-
-
 wire [7:0] w_twid_re;
 wire [7:0] w_twid_im;
 
