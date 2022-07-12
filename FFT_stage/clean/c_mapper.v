@@ -23,9 +23,9 @@ reg data_valid = 0;
 reg we = 1'b0;
 integer i;
 
-/*
+
 // change this when use on real FPGA
-SB_RAM40_4K #(.WRITE_MODE(0),
+SB_RAM40_4K #(.WRITE_MODE(1),
 	.READ_MODE(0),
 	.INIT_0(256'h008b00a700d00000003000590075007f)
 	)
@@ -37,7 +37,7 @@ c_rom (
 .RCLKE(1'b1),
 .WE(1'b0)
 );
-SB_RAM40_4K #(.WRITE_MODE(0),
+SB_RAM40_4K #(.WRITE_MODE(1),
 	.READ_MODE(0),
 	.INIT_0(256'h015b014e015b018101bb00000045007f)
 	)
@@ -49,7 +49,7 @@ cps_rom (
 .RCLKE(1'b1),
 .WE(1'b0)
 );
-SB_RAM40_4K #(.WRITE_MODE(0),
+SB_RAM40_4K #(.WRITE_MODE(1),
 	.READ_MODE(0),
 	.INIT_0(256'h01bb00000045007f00a500b200a5007f)
 	)
@@ -62,7 +62,7 @@ cms_rom(
 .WE(1'b0)
 );
 
-*/
+/*
 
 
 ROM_c c_rom
@@ -83,9 +83,9 @@ ROM_cms cms_rom
 	.addr(stage_data)
 	);
 
+*/
 
-
-always @(posedge clk)
+always @(negedge clk)
 begin
 case(state)
 	IDLE:

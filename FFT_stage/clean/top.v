@@ -19,6 +19,23 @@ ROM_sinus sinus_test
     .addr(w_addr_count)
 );
 
+/*
+SB_RAM40_4K #(.WRITE_MODE(1),
+    .READ_MODE(0),
+.INIT_0(256'h003000590075007f0075005900300000),
+.INIT_1(256'h00d000a7008b0081008b00a700d00000)
+)
+sinus 
+(
+.RDATA(w_data_in),
+.RADDR({7'h00,w_addr_count}),
+.RCLK(CLK),
+.RE(1'b1),
+.RCLKE(1'b1),
+.WE(1'b0)
+);*/
+
+
 reg we = 1'b1;
 
 reg [15:0] count = 0;
@@ -73,5 +90,4 @@ begin
     end
 end
 
-assign PIN_21 = CLK;
 endmodule // top
