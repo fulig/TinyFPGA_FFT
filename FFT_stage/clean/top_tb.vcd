@@ -1,5 +1,5 @@
 $date
-	Fri Jul 22 18:23:17 2022
+	Fri Jul 22 21:39:59 2022
 $end
 $version
 	Icarus Verilog
@@ -48,7 +48,7 @@ $var reg 1 , fft_finish $end
 $var reg 1 @ fill_regs $end
 $var reg 256 A output_reg [255:0] $end
 $var reg 1 B sel_in $end
-$var reg 2 C stage [1:0] $end
+$var reg 3 C stage [2:0] $end
 $var reg 1 D start_calc $end
 $var reg 2 E state [1:0] $end
 $var reg 1 F we_regs $end
@@ -123,7 +123,7 @@ $var wire 3 g addr_out [2:0] $end
 $var wire 1 " clk $end
 $var wire 1 W dv $end
 $var wire 1 T o_we $end
-$var wire 2 h stage [1:0] $end
+$var wire 3 h stage [2:0] $end
 $var wire 1 @ start $end
 $var wire 16 i cps_out [15:0] $end
 $var wire 16 j cms_out [15:0] $end
@@ -31361,6 +31361,9 @@ b100111 #
 #7900000
 b10 {
 b100 }
+b1 h
+b1 S
+b1 z
 b10000 L
 0:
 b101000 #
@@ -31368,9 +31371,6 @@ b101000 3
 b1 E
 1@
 b1 C
-b1 S
-b1 h
-b1 z
 1B
 0I[
 0f]
@@ -39090,6 +39090,7 @@ b0 K
 b0 R
 b0 !"
 b10000 L
+b100 }
 0:
 b0 ;
 b0 H
@@ -39100,7 +39101,9 @@ b0 J
 b0 7
 b0 O
 b10000 P
-b100 }
+b10 h
+b10 S
+b10 z
 0/(
 0('
 07"
@@ -39140,9 +39143,6 @@ b0 G
 b0 >
 b0 M
 b10 C
-b10 S
-b10 h
-b10 z
 b1001011 3
 b1001011 #
 1"
@@ -45925,6 +45925,9 @@ b0 J
 b0 7
 b0 O
 b10000 P
+b11 h
+b11 S
+b11 z
 0:
 b1101110 #
 b1101110 3
@@ -45934,9 +45937,6 @@ b0 G
 b0 >
 b0 M
 b11 C
-b11 S
-b11 h
-b11 z
 0I[
 0f]
 0:`
@@ -51910,6 +51910,7 @@ b0 y
 b0 ~
 b0 |
 b1 {
+b100 }
 b0 9
 b0 K
 b0 R
@@ -51924,7 +51925,9 @@ b0 J
 b0 7
 b0 O
 b10000 P
-b100 }
+b0 h
+b0 S
+b0 z
 b10010010 #
 b10010010 3
 b1 Uc
@@ -51933,9 +51936,6 @@ b0 G
 b0 >
 b0 M
 b0 C
-b0 S
-b0 h
-b0 z
 0,
 b0 mc
 1"

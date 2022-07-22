@@ -58,10 +58,11 @@ wire [7:0] out_7;
 
 wire [7:0]w_zero_im;
 
-reg [7:0] a_re = 8'h0C;
+/*reg [7:0] a_re = 8'h0C;
 reg [7:0] a_im = 8'h1E;
 reg [7:0] b_re = 8'h0F;
-reg [7:0] b_im = 8'h0A;
+reg [7:0] b_im = 8'h0A;*/
+
 reg [7:0] c = 8'h1E;
 reg [8:0] c_plus_s = 9'h029; //c+s
 reg [8:0] c_minus_s = 9'h013; // c-s
@@ -373,7 +374,7 @@ ADC_SPI adc_spi
         .DATA_OUT(adc_data[7:0])
         );
 
-SAMPLER #(.COUNT_TO(200000)) // default: 382
+SAMPLER #(.COUNT_TO(382)) // default: 382
 sample
 (
     .clk(CLK),

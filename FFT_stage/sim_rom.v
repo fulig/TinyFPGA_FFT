@@ -56,17 +56,17 @@ module ROM_sinus
 	input[3:0] addr
 );
 reg [15:0] out;
-reg [15:0] ROM[15:0]; 
+reg [15:0] data[15:0]; 
 always @(*)
 begin
-ROM[0]=16'h0000; ROM[1]=16'h0030;
-ROM[2]=16'h0059; ROM[3]=16'h0075;
-ROM[4]=16'h007F; ROM[5]=16'h0075;
-ROM[6]=16'h0059; ROM[7]=16'h0030;
-ROM[8]=16'h0000; ROM[9]=16'h00D0;
-ROM[10]=16'h00A7; ROM[11]=16'h008B;
-ROM[12]=16'h0081; ROM[13]=16'h008B;
-ROM[14]=16'h00A7; ROM[15]=16'h00D0;
+data[0]=16'h0000; data[1]=16'h0030;
+data[2]=16'h0059; data[3]=16'h0075;
+data[4]=16'h007F; data[5]=16'h0075;
+data[6]=16'h0059; data[7]=16'h0030;
+data[8]=16'h0000; data[9]=16'h00D0;
+data[10]=16'h00A7; data[11]=16'h008B;
+data[12]=16'h0081; data[13]=16'h008B;
+data[14]=16'h00A7; data[15]=16'h00D0;
 out=data[addr];
 end
 endmodule

@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Fri Jul 22 19:38:13 2022
+[*]
+[dumpfile] "/home/misterdulister/Coding/TinyFPGA_FFT/FFT_stage_8/top_tb.vcd"
+[dumpfile_mtime] "Fri Jul 22 19:23:11 2022"
+[dumpfile_size] 2905461
+[savefile] "/home/misterdulister/Coding/TinyFPGA_FFT/FFT_stage_8/top_tb.gtkw"
+[timestart] 0
+[size] 1920 1163
+[pos] 1485 0
+*-26.000000 168400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_top.
+[treeopen] tb_top.top_tb.
+[treeopen] tb_top.top_tb.spi_out.
+[sst_width] 233
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 767
+@28
+tb_top.top_tb.fft_block.fft_finish
+tb_top.top_tb.fft_block.insert_data
+@22
+tb_top.top_tb.fft_block.output_reg[127:0]
+tb_top.top_tb.fft_block.data_out[127:0]
+@28
+tb_top.top_tb.fft_block.start_calc
+tb_top.top_tb.fft_block.stage[1:0]
+@24
+tb_top.top_tb.spi_out.addr[3:0]
+@28
+tb_top.top_tb.spi_out.start_spi
+tb_top.top_tb.spi_out.start_tx
+@23
+tb_top.top_tb.spi_out.send_data[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -3,7 +3,7 @@ module c_mapper #(parameter N=16,
 (
 	input clk,
 	input start,
-	input [$clog2(N/4)-1:0]stage,
+	input [$clog2(N/2)-1:0]stage,
 	output dv,
 	output o_we,
 	output [MSB-1:0] c_out,

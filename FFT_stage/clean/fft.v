@@ -21,7 +21,7 @@ wire [$clog2(N)-1:0]w_addr;
 reg fill_regs = 1'b0;
 reg start_calc =1'b0;
 reg we_regs = 1'b0;
-reg [$clog2(N/4)-1:0]stage = 0;
+reg [$clog2(N/2)-1:0]stage = 0;
 reg [$clog2(N)-1:0]counter_N = 0;
 reg [N*MSB-1:0] output_reg = 0;
 

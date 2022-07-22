@@ -3,7 +3,7 @@
 
 module tb_top;
 
-parameter DURATION = 1000000;
+parameter DURATION = 10000;
 
 reg [7:0] count;
 
