@@ -23,15 +23,16 @@ reg [3:0] addr_count = 0;
 wire [3:0] w_addr_count;
 assign w_addr_count = addr_count;
 
-wire [7:0] w_data_in;
+wire [15:0] w_data_in;
 
 wire [255:0] w_spi_data;
 wire w_insert_data;
+
 fft fft_module
 (
     .clk(CLK),
     .insert_data(w_insert_data),
-    .data_in({8'h00,w_data_in}),
+    .data_in(w_data_in),
     .addr(w_addr),
     .fft_finish(w_start_spi),
     .data_out(w_spi_data)
@@ -58,7 +59,7 @@ sampler sampler_tb(
     );
 
 
-ADC_SPI adc_spi
+/*ADC_SPI adc_spi
 (
 .clk(CLK),
 .sample(w_sample),
@@ -68,6 +69,12 @@ ADC_SPI adc_spi
 .CS(PIN_7),
 .SCLK(PIN_2)
     );
+*/
+ROM_sinus sinus
+(
+    .out(w_data_in),
+    .addr(w_addr)
+);
 
 reg [3:0]cnt = 0;
 reg  start_all = 0;
