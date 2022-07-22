@@ -25,7 +25,7 @@ integer i;
 
 /*
 // change this when use on real FPGA
-SB_RAM40_4K #(.WRITE_MODE(0),
+SB_RAM40_4K #(.WRITE_MODE(0), //war das nicht 1?
 	.READ_MODE(0),
 	.INIT_0(256'h008b00a700d00000003000590075007f)
 	)
@@ -65,19 +65,19 @@ cms_rom(
 */
 
 
-ROM_c_32 c_rom
+ROM_c c_rom
 (
 	.out(c_out),
 	.addr(stage_data)
 	);
 
-ROM_cps_32 cps_rom
+ROM_cps cps_rom
 (
 	.out(cps_out),
 	.addr(stage_data)
 	);
 
-ROM_cms_32 cms_rom
+ROM_cms cms_rom
 (
 	.out(cms_out),
 	.addr(stage_data)

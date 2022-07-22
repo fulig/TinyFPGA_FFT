@@ -76,7 +76,7 @@ reg_array #(.N(N)) input_regs
 	);
 wire [$clog2(N)-1:0]w_index_out;
 
-index_mapper #(.MSB($clog2(N)))
+index_mapper #(.MSB($clog2(N)), .N(N))
 idx_map 
 (
 	.index_in(addr_counter),

@@ -13,7 +13,7 @@ module top #(parameter N=16, parameter MSB=16)
 );
 
 
-ROM_sinus_32 sinus_test
+ROM_sinus sinus_test
 (
     .out(w_data_in),
     .addr(w_addr_count)
@@ -74,5 +74,4 @@ begin
     end
 end
 
-assign PIN_21 = CLK;
 endmodule // top

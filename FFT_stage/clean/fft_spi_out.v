@@ -14,7 +14,7 @@ localparam SET_TX = 2'b01;
 localparam SENDING = 2'b10;
 reg [1:0] state = IDLE;
 
-reg [MSB-1:0] send_data;
+reg [MSB-1:0] send_data = 0;
 reg start_tx = 0;
 wire w_tx_ready;
 
@@ -33,7 +33,7 @@ SPI_Master_With_Single_CS spi_master
     .o_SPI_CS_n(cs)
     );
 
-reg [$clog2(N)-1:0] addr = 0;
+reg [$clog2(2*N)-1:0] addr = 0;
 genvar i;
 wire [MSB-1:0] data_out [2*N-1:0];
 
@@ -76,7 +76,7 @@ begin
 		begin
 			if(count_spi == 0)
 			begin
-				if(addr == N-1)
+				if(addr == 2*N-1)
 				begin
 					state = IDLE;
 				end
