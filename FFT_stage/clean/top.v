@@ -1,5 +1,5 @@
 // look in pins.pcf for all the pin names on the TinyFPGA BX board
-module top #(parameter N=32, parameter MSB=16)
+module top #(parameter N=16, parameter MSB=16)
     (
     input CLK,    // 16MHz clock
     input PIN_9,  //  DATA_IN from ADC
@@ -45,7 +45,7 @@ fft_module
     );
 
 
-fft_spi_out spi_out
+fft_spi_out #(.N(N))spi_out
 (
     .clk(CLK),
     .data_bus(w_spi_data),

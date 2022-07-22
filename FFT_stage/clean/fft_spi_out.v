@@ -1,8 +1,8 @@
-module fft_spi_out #(parameter N=32,
-	parameter MSB = 16)
+module fft_spi_out #(parameter N=16,
+	parameter MSB = 8)
 (
 	input clk,    // Clock
-	input [N*MSB-1:0] data_bus,
+	input [N*2*MSB-1:0] data_bus,
 	input start_spi,
 	output sclk,
 	output mosi,
@@ -14,7 +14,7 @@ localparam SET_TX = 2'b01;
 localparam SENDING = 2'b10;
 reg [1:0] state = IDLE;
 
-reg [MSB/2-1:0] send_data;
+reg [MSB-1:0] send_data;
 reg start_tx = 0;
 wire w_tx_ready;
 
@@ -35,10 +35,10 @@ SPI_Master_With_Single_CS spi_master
 
 reg [$clog2(N)-1:0] addr = 0;
 genvar i;
-wire [MSB-1:0] data_out [N-1:0];
+wire [MSB-1:0] data_out [2*N-1:0];
 
 generate
-	for(i=0;i<N;i=i+1)
+	for(i=0;i<2*N;i=i+1)
 	begin
 		assign data_out[i] = data_bus[(i+1)*MSB-1:i*MSB];
 	end
