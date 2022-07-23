@@ -25,7 +25,7 @@ integer i;
 
 /*
 // change this when use on real FPGA
-SB_RAM40_4K #(.WRITE_MODE(0), //war das nicht 1?
+SB_RAM40_4K #(.WRITE_MODE(0), //war das nicht 1? anderer branch!
 	.READ_MODE(0),
 	.INIT_0(256'h008b00a700d00000003000590075007f)
 	)

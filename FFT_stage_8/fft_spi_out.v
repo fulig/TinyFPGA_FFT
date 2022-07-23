@@ -35,6 +35,7 @@ SPI_Master_With_Single_CS spi_master
 
 reg [$clog2(2*N)-1:0] addr = 0;
 genvar i;
+
 wire [MSB-1:0] data_out [2*N-1:0];
 
 generate
@@ -61,7 +62,6 @@ begin
 			end
 			else
 			begin
-				addr <= 0;
 				start_tx <= 1'b0;
 				count_spi <= 0;
 			end
@@ -74,7 +74,7 @@ begin
 		end
 		SENDING :
 		begin
-			if(count_spi == 0)
+			if(count_spi == 1)
 			begin
 				if(addr == 2*N-1)
 				begin

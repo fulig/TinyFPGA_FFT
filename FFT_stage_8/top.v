@@ -68,5 +68,5 @@ begin
     end
 end
 
-
+assign PIN_21 = w_start_spi;
 endmodule // top
