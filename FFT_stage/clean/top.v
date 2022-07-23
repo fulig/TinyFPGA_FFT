@@ -76,7 +76,7 @@ ROM_sinus sinus
     .addr(w_addr)
 );
 
-reg [3:0]cnt = 0;
+reg [20:0]cnt = 0;
 reg  start_all = 0;
 
 initial begin 
@@ -88,21 +88,11 @@ end
 always @(posedge CLK)
 begin
 cnt = cnt + 1'b1;
-if(cnt == 5) 
-    begin
-        cnt <= 3;
-    end
-if(cnt == 2)
-begin
-    start_all <= 1'b1;
-end
-else 
-    begin
-        start_all <= 1'b0;
-    end
+if (cnt == 1)start_all <= 1'b1;
+else start_all <= 1'b0;
 end
 
 
 assign PIN_21 = start_spi_in;
-assign start_spi_in = start_all| w_start_spi;
+assign start_spi_in = start_all;
 endmodule // top
