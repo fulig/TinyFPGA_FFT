@@ -1,5 +1,5 @@
 module sampler
-	#(parameter COUNT_TO=382, 
+	#(parameter COUNT_TO=2*4*4*382, 
 		parameter N=16)
 	(
 	input clk,

@@ -22,7 +22,6 @@ reg we = 1'b0;
 integer i;
 
 
-// change this when use on real FPGA
 SB_RAM40_4K #(.WRITE_MODE(1),
 	.READ_MODE(0),
 	.INIT_0(256'h008b00a700d00000003000590075007f)
@@ -47,6 +46,7 @@ cps_rom (
 .RCLKE(1'b1),
 .WE(1'b0)
 );
+
 SB_RAM40_4K #(.WRITE_MODE(1),
 	.READ_MODE(0),
 	.INIT_0(256'h01bb00000045007f00a500b200a5007f)
@@ -59,8 +59,27 @@ cms_rom(
 .RCLKE(1'b1),
 .WE(1'b0)
 );
+/*
+//Für Simulation
+ROM_c c_rom
+(
+	.out(c_out),
+	.addr(stage_data)
+	);
 
+ROM_cps cps_rom
+(
+	.out(cps_out),
+	.addr(stage_data)
+	);
 
+ROM_cms cms_rom
+(
+	.out(cms_out),
+	.addr(stage_data)
+	);
+
+*/
 always @(negedge clk)
 begin
 case(state)
