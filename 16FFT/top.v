@@ -1,0 +1,4 @@
+module top
+(
+input CLK,
+		);
