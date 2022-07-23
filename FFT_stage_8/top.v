@@ -44,7 +44,7 @@ spi_out
     );
 
 
-reg [14:0] count = 0;
+reg [20:0] count = 0;
 reg insert_data = 0;
 reg [$clog2(N)-1:0] addr_count = 0;
 wire [$clog2(N)-1:0] w_addr_count;

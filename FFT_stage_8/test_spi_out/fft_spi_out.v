@@ -1,20 +1,22 @@
-module fft_spi_out #(parameter N=16,
-	parameter MSB = 8)
+module fft_spi_out 
+	#(parameter N=32,parameter MSB_2 = 8, parameter WAIT_TIL_NEXT = 64)
 (
-	input clk,    // Clock
-	input [N*2*MSB-1:0] data_bus,
+	input clk,
+	input [N*2*MSB_2-1:0] data_bus,
 	input start_spi,
 	output sclk,
 	output mosi,
-	output cs
+	output cs,
+	output w_tx_ready
 );
 
 localparam IDLE = 2'b00;
 localparam SET_TX = 2'b01;
 localparam SENDING = 2'b10;
+localparam WAIT = 2'b11;
 reg [1:0] state = IDLE;
 
-reg [MSB-1:0] send_data = 0;
+reg [MSB_2-1:0] send_data = 0;
 reg start_tx = 0;
 wire w_tx_ready;
 
@@ -33,19 +35,19 @@ SPI_Master_With_Single_CS spi_master
     .o_SPI_CS_n(cs)
     );
 
-reg [$clog2(2*N)-1:0] addr = 0;
+reg [4:0] addr = 0;
 genvar i;
 
-wire [MSB-1:0] data_out [2*N-1:0];
+wire [MSB_2-1:0] data_out [15:0];
 
 generate
-	for(i=0;i<2*N;i=i+1)
+	for(i=0;i<16;i=i+1)
 	begin
-		assign data_out[i] = data_bus[(i+1)*MSB-1:i*MSB];
+		assign data_out[i] = data_bus[(i+1)*MSB_2-1:i*MSB_2];
 	end
 endgenerate
 
-reg [6:0] count_spi=0;
+reg [$clog2(WAIT_TIL_NEXT)-1:0] count_spi =0;
 
 
 
@@ -56,48 +58,51 @@ begin
 		begin
 			if(start_spi)
 			begin
-				count_spi <= 0;
 				addr <= 0;
 				state <= SET_TX;
 			end
 			else
 			begin
 				start_tx <= 1'b0;
-				count_spi <= 0;
 			end
 		end
-		SET_TX: 
+		SET_TX:
 		begin
 			start_tx <= 1'b1;
-			count_spi <= count_spi + 1'b1;
-			state = SENDING;
+			state <= SENDING;
 		end
-		SENDING :
+		SENDING : 
 		begin
-			if(count_spi == 0)
+			if(w_tx_ready)
 			begin
-				if(addr == 2*N-1)
+				count_spi = 0;
+				state <= WAIT;
+			end
+			else start_tx <= 1'b0;
+		end
+		WAIT :
+		begin
+			if(count_spi == WAIT_TIL_NEXT - 1)
+			begin
+				if(addr == 2*N-1) 
 				begin
-					state = IDLE;
+					state <= IDLE;
 				end
 				else
 				begin
-				addr <= addr + 1'b1;
-				state <= SET_TX;
+					addr = addr + 1'b1;
+					state <= SET_TX;
 				end
 			end
 			else 
-				begin
-					start_tx <= 1'b0;
-					count_spi = count_spi + 1;
-				end
+				count_spi <= count_spi +1'b1;
 		end
 	endcase
 end
 
 always @(negedge clk)
 begin
-send_data = data_out[addr];
+send_data <= data_out[addr];
 end
 
 endmodule 
