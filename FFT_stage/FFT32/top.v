@@ -1,5 +1,5 @@
 // look in pins.pcf for all the pin names on the TinyFPGA BX board
-module top #(parameter N=32, parameter MSB=16)
+module top #(parameter N=32)
     (
     input CLK,    // 16MHz clock
     input PIN_9,  //  DATA_IN from ADC
@@ -13,32 +13,25 @@ module top #(parameter N=32, parameter MSB=16)
 );
 
 
-ROM_sinus_32 sinus_test
-(
-    .out(w_data_in),
-    .addr(w_addr_count)
-);
-
-reg we = 1'b1;
-
-reg [15:0] count = 0;
+wire w_sample;
+wire [3:0] w_addr;
+wire start_spi_in;
 wire w_start_spi;
 
-reg [4:0] addr_count = 0;
-wire [4:0] w_addr_count;
-assign w_addr_count = addr_count;
+reg [17:0]cnt = 0;
+reg  start_all = 0;
 
-reg insert_data = 0;
-wire [15:0] w_data_in;
+wire [7:0] w_data_in;
 
-wire [N*MSB-1:0] w_spi_data;
+wire [255:0] w_spi_data;
+wire w_insert_data;
 
 fft #(.N(N)) fft_module
 (
     .clk(CLK),
-    .insert_data(insert_data),
-    .data_in(w_data_in),
-    .addr(w_addr_count),
+    .insert_data(w_insert_data),
+    .data_in({8'h00,w_data_in}),
+    .addr(w_addr),
     .fft_finish(w_start_spi),
     .data_out(w_spi_data)
     );
@@ -55,23 +48,39 @@ fft_spi_out #(.N(N)) spi_out
     );
 
 
-always @ (posedge CLK)
-begin
-    count <= count + 1'b1;
-    if(count == 4) 
-    begin
-        insert_data <= 1'b1;
-    end
-    if(insert_data)
-    begin
-        if(addr_count == N-1)
-        begin
-            addr_count <= 0;
-            insert_data <= 1'b0;
-        end
-        else addr_count <= addr_count +1'b1;
-    end
+sampler #(.N(N)) sampler_tb(
+.clk(CLK),
+.start(start_spi_in),
+.sample(w_sample),
+.addr(w_addr),
+.run(w_insert_data)
+    );
+
+
+ADC_SPI #(.N(N)) adc_spi
+(
+.clk(CLK),
+.sample(w_sample),
+.data_in(PIN_9),
+.DATA_OUT(w_data_in),
+.CS(PIN_7),
+.SCLK(PIN_2)
+    );
+
+initial begin 
+cnt = 0;
+start_all = 0;
 end
 
-assign PIN_21 = CLK;
+
+always @(posedge CLK)
+begin
+cnt = cnt + 1'b1;
+if (cnt == 1)start_all <= 1'b1;
+else start_all <= 1'b0;
+end
+
+
+assign PIN_21 = start_spi_in;
+assign start_spi_in = start_all;
 endmodule // top
