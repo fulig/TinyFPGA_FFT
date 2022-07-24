@@ -32,7 +32,7 @@ fft fft_module
 (
     .clk(CLK),
     .insert_data(w_insert_data),
-    .data_in({8'h00, w_data_in}),
+    .data_in({8'h00,w_data_in}),
     .addr(w_addr),
     .fft_finish(w_start_spi),
     .data_out(w_spi_data)
@@ -59,16 +59,15 @@ sampler sampler_tb(
     );
 
 
-/*ADC_SPI adc_spi
+ADC_SPI adc_spi
 (
 .clk(CLK),
 .sample(w_sample),
-.DV(w_dv),
 .data_in(PIN_9),
 .DATA_OUT(w_data_in),
 .CS(PIN_7),
 .SCLK(PIN_2)
-    );*/
+    );
 /*
 ROM_sinus sinus
 (
