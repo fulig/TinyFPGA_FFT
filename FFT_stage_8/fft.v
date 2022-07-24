@@ -15,19 +15,17 @@ wire [MSB*N-1:0] w_fft_out;
 wire w_calc_finish; 
 wire [$clog2(N)-1:0]w_addr;
 
-
 reg fill_regs = 1'b0;
 reg start_calc =1'b0;
-reg we_regs = 1'b0;
 reg [$clog2(N/2)-1:0]stage = 0;
 reg [$clog2(N)-1:0]counter_N = 0;
+
 
 fft_reg_stage #(.N(N)) reg_stage 
 (
 	.clk(clk),
 	.fill_regs(fill_regs), //get values for c, cps and cms.
 	.start_calc(start_calc),
-	.we_regs(we_regs),
 	.data_in(w_fft_in),
 	.addr_counter(w_addr[$clog2(N)-1:0]),
 	.stage(stage),
@@ -73,7 +71,6 @@ case (state)
 	begin
 		if(insert_data)
 			begin
-				we_regs <= 1'b1;
 				fill_regs <= 1'b1;
 				counter_N <= 0;
 				state <= DATA_IN;

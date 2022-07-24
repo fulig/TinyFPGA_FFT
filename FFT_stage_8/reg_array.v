@@ -1,7 +1,6 @@
 module reg_array #(parameter N=32, parameter MSB=16)
 	(
       	input clk,
-		input we,
 		input [$clog2(N)-1:0] addr,
 		input [MSB-1:0] data,
       	output [N*MSB-1:0]  data_out 
@@ -13,10 +12,7 @@ genvar i;
 
 always @(negedge clk)
 begin
-if(we)
-begin
 	regs[addr] <= data;
-end
 end
 
 generate

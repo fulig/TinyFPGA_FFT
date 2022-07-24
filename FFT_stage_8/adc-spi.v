@@ -15,10 +15,6 @@ module ADC_SPI #(parameter CLKS_PER_HALF_BIT = 2,
     localparam IDLE = 1'b0;
     localparam GET_DATA= 1'b1;
 
-    /*reg r_SPI_CLK = 1'b1;
-    reg r_data_in = 1'b0;
-    reg r_DV = 1'b0;
-    reg r_CS = 1'b1;*/
     reg r_case = IDLE;
 
     reg [8:0]count = 9'b0000000; // an parameter anpassen
