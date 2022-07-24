@@ -1,38 +1,32 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Sun Jul 24 15:25:20 2022
+[*] Sun Jul 24 19:19:42 2022
 [*]
 [dumpfile] "/home/misterdulister/Coding/TinyFPGA_FFT/FFT_stage_8/top_tb.vcd"
-[dumpfile_mtime] "Sun Jul 24 15:24:40 2022"
-[dumpfile_size] 2691510
+[dumpfile_mtime] "Sun Jul 24 19:13:33 2022"
+[dumpfile_size] 2692844
 [savefile] "/home/misterdulister/Coding/TinyFPGA_FFT/FFT_stage_8/top_tb.gtkw"
 [timestart] 0
 [size] 1920 1163
 [pos] 1485 0
-*-22.000000 6010000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-23.000000 23780000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_top.
 [treeopen] tb_top.top_tb.
 [treeopen] tb_top.top_tb.fft_block.
 [treeopen] tb_top.top_tb.fft_block.reg_stage.
 [treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.
-[treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].
-[treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.
+[treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[0].
 [treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.twid_mult.
-[treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.twid_mult.multiplier_I.
 [sst_width] 425
-[signals_width] 166
+[signals_width] 182
 [sst_expanded] 1
-[sst_vpaned_height] 767
+[sst_vpaned_height] 811
 @28
-tb_top.top_tb.fft_block.fft_finish
-tb_top.top_tb.fft_block.insert_data
-@22
-tb_top.top_tb.fft_block.output_reg[127:0]
-tb_top.top_tb.fft_block.data_out[127:0]
-@28
-tb_top.top_tb.fft_block.start_calc
-tb_top.top_tb.fft_block.stage[1:0]
-tb_top.top_tb.spi_out.start_spi
-tb_top.top_tb.spi_out.start_tx
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.data_valid
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.start_calc
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.twid_mult.multplier.state[1:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.twid_mult.multplier.start
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.start_calc
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.twid_mult.multplier.data_valid
 [pattern_trace] 1
 [pattern_trace] 0
