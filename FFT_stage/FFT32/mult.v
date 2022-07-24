@@ -1,11 +1,12 @@
+
 module multiplier_8_9Bit
 	#(parameter N=8, 
 	  parameter M=9	)
 	(
 		input clk,
 		input start,
-		input [7:0] input_0,
-		input [8:0] input_1,
+		input [7:0] in_0,
+		input [8:0] in_1,
 		output reg data_valid,
 		output reg [16:0] out
 		);
@@ -48,24 +49,9 @@ begin
 		begin
 			if(start)
 			begin
-
-				if(input_0[7] == 1'b1)
-				begin
-					input_0_exp[16:0] <= {9'b111111111,input_0[7:0]};
-				end
-				if(input_0[7] == 1'b0)
-				begin
-					input_0_exp[16:0] <= {9'b000000000,input_0[7:0]};
-				end
-				if (input_1[8] == 1'b1)
-				begin
-					t[16:0] <= {8'b11111111,input_1[8:0]};
-				end
-				if(input_1[8] == 1'b0)
-				begin
-					t[16:0] <= {8'b00000000,input_1[8:0]};
-				end
-								count <= 5'h00;
+				input_0_exp[16:0] <= {in_0[7], in_0[7], in_0[7], in_0[7],in_0[7], in_0[7],in_0[7],in_0[7],in_0[7], in_0[7:0]};
+				t[16:0] <= {in_1[8],in_1[8],in_1[8],in_1[8],in_1[8],in_1[8],in_1[8],in_1[8],in_1[8:0]};
+				count <= 5'h00;
 				p[16:0] <= 17'h00000;
 				state <= MULT;
 			end

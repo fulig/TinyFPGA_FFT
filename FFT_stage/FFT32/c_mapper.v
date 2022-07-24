@@ -23,48 +23,52 @@ reg data_valid = 0;
 reg we = 1'b0;
 integer i;
 
-/*
+
 // change this when use on real FPGA
-SB_RAM40_4K #(.WRITE_MODE(0),
+
+SB_RAM40_4K #(.WRITE_MODE(1),
 	.READ_MODE(0),
-	.INIT_0(256'h008b00a700d00000003000590075007f)
+	.INIT_0(256'h001800300046005900690075007c007f),
+	.INIT_1(256'h0084008b009700a700ba00d000e80000)
 	)
 c_rom (
 .RDATA(c_out),
-.RADDR({8'h00,stage_data}),
+.RADDR({7'h00,stage_data}),
 .RCLK(clk),
 .RE(we),
 .RCLKE(1'b1),
 .WE(1'b0)
 );
-SB_RAM40_4K #(.WRITE_MODE(0),
+SB_RAM40_4K #(.WRITE_MODE(1),
 	.READ_MODE(0),
-	.INIT_0(256'h015b014e015b018101bb00000045007f)
+	.INIT_0(256'h019c01bb01dd0000002300450064007f),
+	.INIT_1(256'h016c015b0151014e0151015b016c0181)
 	)
 cps_rom (
 .RDATA(cps_out),
-.RADDR({8'h00,stage_data}),
+.RADDR({7'h00,stage_data}),
 .RCLK(clk),
 .RE(we),
 .RCLKE(1'b1),
 .WE(1'b0)
 );
-SB_RAM40_4K #(.WRITE_MODE(0),
+SB_RAM40_4K #(.WRITE_MODE(1),
 	.READ_MODE(0),
-	.INIT_0(256'h01bb00000045007f00a500b200a5007f)
+	.INIT_0(256'h009400a500af00b200af00a50094007f),
+	.INIT_1(256'h019c01bb01dd0000002300450064007f)
 	)
 cms_rom(
 .RDATA(cms_out),
-.RADDR({8'h00,stage_data}),
+.RADDR({7'h00,stage_data}),
 .RCLK(clk),
 .RE(we),
 .RCLKE(1'b1),
 .WE(1'b0)
 );
 
-*/
 
 
+/*
 ROM_c_32 c_rom
 (
 	.out(c_out),
@@ -82,8 +86,7 @@ ROM_cms_32 cms_rom
 	.out(cms_out),
 	.addr(stage_data)
 	);
-
-
+*/
 
 always @(posedge clk)
 begin

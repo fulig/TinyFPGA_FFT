@@ -35,13 +35,3 @@ module full_adder(x,y,c_in,s,c_out);
  assign s = (x^y) ^ c_in;
  assign c_out = (y&c_in)| (x&y) | (x&c_in);
 endmodule // full_adder
-
-module pos_2_neg
-   #(parameter N=16)
-   (
-   input [N-1:0]pos,
-   output [N-1:0]neg
-   );
-
-assign neg = ~pos + 1'b1;
-endmodule

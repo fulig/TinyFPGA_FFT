@@ -10,26 +10,23 @@ module fft #(parameter N=16,
 	output reg fft_finish
 );
 
-wire [MSB-1:0] w_rom_data;
+
 wire [MSB-1:0] w_mux_out;
 wire [MSB-1:0] w_fft_in;
 wire [MSB*N-1:0] w_fft_out;
 wire w_calc_finish; 
 wire [$clog2(N)-1:0]w_addr;
-//wire [MSB*N-1:0] w_output_reg;
+
 
 reg fill_regs = 1'b0;
 reg start_calc =1'b0;
-reg we_regs = 1'b0;
 reg [$clog2(N/4)-1:0]stage = 0;
 reg [$clog2(N)-1:0]counter_N = 0;
-reg [N*MSB-1:0] output_reg = 0;
 
 fft_reg_stage #(.N(N)) reg_stage (
 	.clk(clk),
 	.fill_regs(fill_regs), //get values for c, cps and cms.
 	.start_calc(start_calc),
-	.we_regs(we_regs),
 	.data_in(w_fft_in),
 	.addr_counter(w_addr[$clog2(N)-1:0]),
 	.stage(stage),
@@ -75,7 +72,6 @@ case (state)
 	begin
 		if(insert_data)
 			begin
-				we_regs <= 1'b1;
 				fill_regs <= 1'b1;
 				busy <= 1'b1;
 				counter_N <= 0;
@@ -130,8 +126,5 @@ case (state)
 	end
 endcase
 end
-
-
-//assign data_out = output_reg;
 
 endmodule // fft

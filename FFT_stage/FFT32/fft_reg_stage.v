@@ -3,7 +3,6 @@ module fft_reg_stage #(parameter N=16,
 (
 	input clk,
 	input fill_regs,
-	input we_regs,
 	input start_calc,
 	input [MSB-1:0] data_in,
 	input [$clog2(N)-1:0] addr_counter,
