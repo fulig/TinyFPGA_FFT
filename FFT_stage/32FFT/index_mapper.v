@@ -1,7 +1,8 @@
-module index_mapper #(parameter MSB = 8)
+module index_mapper 
+#(parameter N = 16, parameter MSB = 8 )
 	(
 		input [MSB-1:0] index_in,
-		input [MSB/2 - 1:0] stage,
+		input [$clog2($clog2(N)) - 1:0] stage,
 		output [MSB-1:0]  index_out
 		);
 

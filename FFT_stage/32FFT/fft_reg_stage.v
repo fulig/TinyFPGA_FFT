@@ -1,5 +1,5 @@
-module fft_reg_stage #(parameter N=16,
-	parameter MSB=16)
+module fft_reg_stage 
+#(parameter N=16,parameter MSB=16)
 (
 	input clk,
 	input fill_regs,
@@ -73,7 +73,7 @@ reg_array #(.N(N)) input_regs
 	);
 wire [$clog2(N)-1:0]w_index_out;
 
-index_mapper #(.MSB($clog2(N)))
+index_mapper #(.N(N), .MSB($clog2(N)))
 idx_map 
 (
 	.index_in(addr_counter),

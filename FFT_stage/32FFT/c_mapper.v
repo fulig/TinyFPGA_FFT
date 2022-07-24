@@ -28,7 +28,7 @@ SB_RAM40_4K #(.WRITE_MODE(1),
 	)
 c_rom (
 .RDATA(c_out),
-.RADDR({8'h00,stage_data}),
+.RADDR({7'h00,stage_data}),
 .RCLK(clk),
 .RE(we),
 .RCLKE(1'b1),
@@ -40,7 +40,7 @@ SB_RAM40_4K #(.WRITE_MODE(1),
 	)
 cps_rom (
 .RDATA(cps_out),
-.RADDR({8'h00,stage_data}),
+.RADDR({7'h00,stage_data}),
 .RCLK(clk),
 .RE(we),
 .RCLKE(1'b1),
@@ -53,7 +53,7 @@ SB_RAM40_4K #(.WRITE_MODE(1),
 	)
 cms_rom(
 .RDATA(cms_out),
-.RADDR({8'h00,stage_data}),
+.RADDR({7'h00,stage_data}),
 .RCLK(clk),
 .RE(we),
 .RCLKE(1'b1),
