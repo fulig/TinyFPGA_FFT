@@ -8,7 +8,6 @@ module mux #(parameter MSB=16,
 
 integer i;
 
-reg [MSB-1:0] tmp;
 always @(*)
 begin
 	for(i=0;i<MSB;i=i+1)data_out[i] = data_bus[i+sel*MSB];
