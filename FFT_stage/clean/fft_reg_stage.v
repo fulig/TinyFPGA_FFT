@@ -55,7 +55,7 @@ c_mapper #(.N(N)) c_map
 	.clk(clk),
 	.start(fill_regs),
 	.stage(stage),
-	.o_we(w_we_c_map),
+	.we(w_we_c_map),
 	.c_out(w_c_in),
 	.cps_out(w_cps_in),
 	.cms_out(w_cms_in),

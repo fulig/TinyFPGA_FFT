@@ -19,10 +19,6 @@ wire start_spi_in;
 reg [15:0] count = 0;
 wire w_start_spi;
 
-reg [3:0] addr_count = 0;
-wire [3:0] w_addr_count;
-assign w_addr_count = addr_count;
-
 wire [7:0] w_data_in;
 
 wire [255:0] w_spi_data;

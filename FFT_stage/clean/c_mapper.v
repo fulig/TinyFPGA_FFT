@@ -4,7 +4,7 @@ module c_mapper #(parameter N=16,
 	input clk,
 	input start,
 	input [$clog2(N/4)-1:0]stage,
-	output o_we,
+	output reg we,
 	output [MSB-1:0] c_out,
 	output [MSB-1:0] cps_out,
 	output [MSB-1:0] cms_out,
@@ -114,7 +114,6 @@ case(state)
 endcase // state
 end
 
-assign o_we = we;
 assign addr_out = count_data;
 
 endmodule // c_mapper
