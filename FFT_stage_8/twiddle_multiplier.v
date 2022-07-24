@@ -17,8 +17,8 @@ wire [16:0] w_z;
 wire [16:0] w_mult;
 wire [16:0] w_mult_i;
 
-wire [8:0] w_r_out;
-wire [8:0] w_i_out;
+wire [7:0] w_r_out;
+wire [7:0] w_i_out;
 wire [16:0] w_add_z;
 wire [16:0] w_neg_z;
 wire [8:0] w_i_x;
@@ -36,20 +36,20 @@ adder_E(
 	);
 
 N_bit_adder
-#(.N(9))
+#(.N(8))
 adder_R
 (
-	.input1(w_mult[15:7]),
-	.input2(w_z[15:7]),
+	.input1(w_mult[14:7]),
+	.input2(w_z[14:7]),
 	.answer(w_r_out)
 	);
 
 N_bit_adder
-#(.N(9))
+#(.N(8))
 adder_I
 (
-	.input1(w_mult[15:7]),
-	.input2(w_neg_z[15:7]),
+	.input1(w_mult[14:7]),
+	.input2(w_neg_z[14:7]),
 	.answer(w_i_out)
 	);
 reg [1:0] sel=0;
@@ -77,8 +77,8 @@ multiplier_8_9Bit multplier
 (
 	.clk(clk),
 	.start(start_mult),
-	.in_0(w_8Bit_mux),
-	.in_1(w_9Bit_mux),
+	.input_0(w_8Bit_mux),
+	.input_1(w_9Bit_mux),
 	.data_valid(w_mult_dv),
 	.out(w_mult)
 	);
@@ -172,7 +172,7 @@ begin
 	begin
 		if(w_mult_dv)
 		begin
-			o_Re_out <= w_r_out[8:1];
+			o_Re_out <= w_r_out;
 			sel <= sel + 1'b1;
 			start_mult <= 1'b1;
 			state <= CALC_I;
@@ -186,7 +186,7 @@ begin
 	begin
 		if(w_mult_dv)
 		begin
-			o_Im_out <= w_i_out[8:1];
+			o_Im_out <= w_i_out;
 			data_valid <= 1'b1;
 			state <= IDLE;
 		end

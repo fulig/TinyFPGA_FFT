@@ -1,32 +1,49 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Sun Jul 24 19:19:42 2022
+[*] Sun Jul 24 20:27:25 2022
 [*]
 [dumpfile] "/home/misterdulister/Coding/TinyFPGA_FFT/FFT_stage_8/top_tb.vcd"
-[dumpfile_mtime] "Sun Jul 24 19:13:33 2022"
-[dumpfile_size] 2692844
+[dumpfile_mtime] "Sun Jul 24 20:21:53 2022"
+[dumpfile_size] 2692868
 [savefile] "/home/misterdulister/Coding/TinyFPGA_FFT/FFT_stage_8/top_tb.gtkw"
 [timestart] 0
 [size] 1920 1163
 [pos] 1485 0
-*-23.000000 23780000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-23.000000 11700000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] tb_top.
 [treeopen] tb_top.top_tb.
 [treeopen] tb_top.top_tb.fft_block.
 [treeopen] tb_top.top_tb.fft_block.reg_stage.
 [treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.
-[treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[0].
 [treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.twid_mult.
+[treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].
+[treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.
+[treeopen] tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.
 [sst_width] 425
 [signals_width] 182
 [sst_expanded] 1
-[sst_vpaned_height] 811
+[sst_vpaned_height] 594
+@22
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.adder_I.input1[7:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.adder_I.input2[7:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.adder_I.answer[7:0]
 @28
-tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.data_valid
-tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.start_calc
-tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.twid_mult.multplier.state[1:0]
-tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.twid_mult.multplier.start
-tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.start_calc
-tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[1].butterfly.twid_mult.multplier.data_valid
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.mux_8bit.sel
+@22
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.mux_8bit.data_bus[15:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.mux_8bit.data_out[7:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.mux_9bit.data_bus[26:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.mux_9bit.data_out[8:0]
+@28
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.mux_9bit.sel[1:0]
+@22
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.z_neg.neg[16:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.z_neg.pos[16:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.reg_z[16:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.adder_E.input1[8:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.adder_E.input2[8:0]
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.adder_E.answer[8:0]
+@23
+tb_top.top_tb.fft_block.reg_stage.test_fft_stage.bfs[2].butterfly.twid_mult.i_c[7:0]
 [pattern_trace] 1
 [pattern_trace] 0
