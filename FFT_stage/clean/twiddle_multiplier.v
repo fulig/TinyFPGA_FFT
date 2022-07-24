@@ -54,33 +54,36 @@ adder_I
 	);
 
 
-multiplier_8_9Bit multiplier_R
+slowmpy multiplier_R
 (
-	.clk(clk),
-	.start(start),
-	.input_0(i_y),
-	.input_1(i_c_minus_s),
-	.out(w_mult_r)
+	.i_clk(clk),
+	.i_reset(1'b0),
+	.i_stb(start),
+	.i_a({i_y[MSB-1],i_y[MSB-1:0]}),
+	.i_b(i_c_minus_s),
+	.o_p(w_mult_r)
 	);
 
-multiplier_8_9Bit multiplier_I
+slowmpy multiplier_I
 (
-	.clk(clk),
-	.start(start),
-	.input_0(i_x),
-	.input_1(i_c_plus_s),
-	.out(w_mult_i)
+	.i_clk(clk),
+	.i_reset(1'b0),
+	.i_stb(start),
+	.i_a({i_x[MSB-1], i_x[MSB-1:0]}),
+	.i_b(i_c_plus_s),
+	.o_p(w_mult_i)
 	);
 
 
-multiplier_8_9Bit multiplier_Z
+slowmpy multiplier_Z
 (
-	.clk(clk),
-	.start(start),
-	.input_0(i_c),
-	.input_1(w_add_answer),
-	.data_valid(w_mult_dv),
-	.out(w_mult_z)
+	.i_clk(clk),
+	.i_stb(start),
+	.i_reset(1'b0),
+	.i_a({i_c[MSB-1],i_c[MSB-1:0]}),
+	.i_b(w_add_answer),
+	.o_done(w_mult_dv),
+	.o_p(w_mult_z)
 	);
 
 pos_2_neg #(.N(MSB+1))

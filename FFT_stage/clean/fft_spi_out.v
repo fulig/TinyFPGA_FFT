@@ -27,7 +27,6 @@ SPI_Master_With_Single_CS spi_master
     .i_TX_DV(start_tx),
     .o_TX_Ready(w_tx_ready),
 
-    .o_RX_DV(dv_test),
     .o_SPI_Clk(sclk),
     .o_SPI_MOSI(mosi),
     .o_SPI_CS_n(cs)

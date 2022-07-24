@@ -59,7 +59,7 @@ sampler sampler_tb(
     );
 
 
-ADC_SPI adc_spi
+/*ADC_SPI adc_spi
 (
 .clk(CLK),
 .sample(w_sample),
@@ -68,7 +68,7 @@ ADC_SPI adc_spi
 .DATA_OUT(w_data_in),
 .CS(PIN_7),
 .SCLK(PIN_2)
-    );
+    );*/
 /*
 ROM_sinus sinus
 (
