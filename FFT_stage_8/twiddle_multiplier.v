@@ -57,10 +57,10 @@ reg [16:0] reg_z = 0;
 wire [7:0] w_8Bit_mux;
 wire [8:0] w_9Bit_mux;
 
-mux #(.N(2), .MSB(8)) mux_8bit
+mux #(.N(3), .MSB(8)) mux_8bit
 (
-	.sel(sel[1]|sel[0]),
-	.data_bus({i_y,i_c}),
+	.sel(sel),
+	.data_bus({i_x,i_y,i_c}),
 	.data_out(w_8Bit_mux)
 	);
 
