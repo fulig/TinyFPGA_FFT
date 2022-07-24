@@ -7,10 +7,10 @@ reg [15:0] out;
 reg [15:0] data[7:0];
 always @(*)
 begin
-data[0]=16'h007f; data[1]=16'h0075;
-data[2]=16'h0059; data[3]=16'h0030;
-data[4]=16'h0000; data[5]=16'h00d0;
-data[6]=16'h00a7; data[7]=16'h008b;
+data[0]=16'h007f; data[1]=16'h0076;
+data[2]=16'h005A; data[3]=16'h0030;
+data[4]=16'h0000; data[5]=16'h00D0;
+data[6]=16'h00A6; data[7]=16'h008A;
 out=data[addr];
 end
 endmodule
@@ -42,10 +42,10 @@ reg [15:0] out;
 reg [15:0] data[7:0]; 
 always @(*)
 begin
-data[0]=16'h007f; data[1]=16'h0045;
-data[2]=16'h0000; data[3]=16'h01bb;
-data[4]=16'h0181; data[5]=16'h015b;
-data[6]=16'h014e; data[7]=16'h015b;
+data[0]=16'h007f; data[1]=16'h0046;
+data[2]=16'h0000; data[3]=16'h01BA;
+data[4]=16'h0180; data[5]=16'h015A;
+data[6]=16'h014C; data[7]=16'h015A;
 out=data[addr];
 end
 endmodule
@@ -59,10 +59,10 @@ reg [15:0] out;
 reg [15:0] data[7:0]; 
 always @(*)
 begin
-data[0]=16'h007f; data[1]=16'h00a5;
-data[2]=16'h00b2; data[3]=16'h00a5;
-data[4]=16'h007f; data[5]=16'h0045;
-data[6]=16'h0000; data[7]=16'h01bb;
+data[0]=16'h007f; data[1]=16'h00a6;
+data[2]=16'h00b4; data[3]=16'h00a6;
+data[4]=16'h007f; data[5]=16'h0046;
+data[6]=16'h0000; data[7]=16'h01ba;
 out=data[addr];
 end
 endmodule

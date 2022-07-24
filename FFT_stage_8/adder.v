@@ -3,11 +3,10 @@ module N_bit_adder
    (
    input [N-1:0]input1,
    input [N-1:0]input2,
-   output [N-1:0]answer,
-   output carry_out
+   output [N-1:0]answer
    );
 
-   //wire  carry_out;
+
   wire [N-1:0] carry;
    genvar i;
    generate 
@@ -18,7 +17,6 @@ module N_bit_adder
    else
   full_adder f(input1[i],input2[i],carry[i-1],answer[i],carry[i]);
      end
-  assign carry_out = carry[N-1];
    endgenerate
 endmodule 
 

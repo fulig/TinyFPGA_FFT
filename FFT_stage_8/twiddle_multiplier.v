@@ -31,7 +31,7 @@ N_bit_adder
 #(.N(9))
 adder_E(
 	.input1({i_x[7],i_x[7:0]}),
-	.input2(w_neg_y),
+	.input2(~{i_y[7],i_y[7:0]}+1'b1),
 	.answer(w_add_answer[8:0])
 	);
 
@@ -49,7 +49,7 @@ N_bit_adder
 adder_I
 (
 	.input1(w_mult_i[14:7]),
-	.input2(w_neg_z[14:7]),
+	.input2(~w_mult_z[14:7]+1'b1),
 	.answer(w_i_out)
 	);
 
@@ -81,20 +81,6 @@ multiplier_8_9Bit multiplier_Z
 	.in_1(w_add_answer),
 	.data_valid(w_mult_dv),
 	.out(w_mult_z)
-	);
-
-pos_2_neg #(.N(9))
-y_neg
-(
-	.pos({i_y[7],i_y[7:0]}),
-	.neg(w_neg_y)
-	);
-
-pos_2_neg #(.N(17))
-z_neg
-(
-	.pos(w_mult_z),
-	.neg(w_neg_z)
 	);
 
 assign data_valid = w_mult_dv;
