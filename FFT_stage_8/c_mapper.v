@@ -90,8 +90,8 @@ case(state)
 	begin
 		if(start)
 		begin
-			count_data = 0;
-			stage_data = 0;
+			count_data = 1;
+			stage_data = 1;
 			we <= 1'b1;
 			i = stage;
 			state = DATA_OUT;

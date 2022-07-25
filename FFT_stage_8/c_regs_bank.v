@@ -29,7 +29,7 @@ begin
 end
 end
 generate
-	for(i=0;i<N/2;i=i+1)
+	for(i=1;i<N/2;i=i+1)
 	begin
 	assign c_out[(i+1)*MSB-1:MSB*i] = cosinus[i];
 	assign cps_out[(i+1)*(MSB+1)-1:(MSB+1)*i] = cos_plus_sin[i];
@@ -37,5 +37,8 @@ generate
 	end
 endgenerate
 
+assign c_out[7:0] = 8'h7f;
+assign cps_out[8:0] = 9'h07f;
+assign cms_out[8:0] = 9'h07f;
 
 endmodule // c_rom_bank
