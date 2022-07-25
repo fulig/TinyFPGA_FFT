@@ -26,7 +26,7 @@ fft_block
     .fft_finish(w_start_spi)
     );
 
-ROM_sinus sinus
+sinus_8 sinus
 (
     .out(w_data_sinus),
     .addr(w_addr_count)

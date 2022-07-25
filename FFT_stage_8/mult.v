@@ -11,7 +11,7 @@ module multiplier_8_9Bit
 		output reg [16:0] out
 		);
 
-reg [4:0] count = 5'h00;
+reg [4:0]count = 5'h00;
 reg [1:0] state;
 reg [16:0] p;
 reg [16:0] t;

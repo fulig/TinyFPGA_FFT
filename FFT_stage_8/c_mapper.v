@@ -66,19 +66,19 @@ cms_rom(
 ROM_c c_rom
 (
 	.out(c_out),
-	.addr(stage_data)
+	.addr({stage_data,1'b0})
 	);
 
 ROM_cps cps_rom
 (
 	.out(cps_out),
-	.addr(stage_data)
+	.addr({stage_data,1'b0})
 	);
 
 ROM_cms cms_rom
 (
 	.out(cms_out),
-	.addr(stage_data)
+	.addr({stage_data,1'b0})
 	);
 
 
