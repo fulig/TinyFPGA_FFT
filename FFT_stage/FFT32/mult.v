@@ -65,6 +65,11 @@ begin
 
 end
 
+always @(posedge clk)
+begin
+
+end
+
 assign w_p[16:0] = p[16:0];
 assign w_t[16:0] = t[16:0];
 
