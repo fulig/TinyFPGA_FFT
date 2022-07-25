@@ -11,9 +11,6 @@ module bfprocessor
 		output [7:0] E_re, E_im
 		);
 
-wire [7:0] w_twid_re;
-wire [7:0] w_twid_im;
-
 wire [7:0] w_neg_b_re;
 wire [7:0] w_neg_b_im;
 
@@ -92,10 +89,5 @@ begin
 	D_re[7:0] <= w_d_re[8:1];
 end
 end
-
-
-//assign D_im[7:0] = w_d_im[8:1];
-//assign D_re[7:0] = w_d_re[8:1];
-
 
 endmodule // bfprocessor

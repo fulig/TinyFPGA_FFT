@@ -120,7 +120,6 @@ case (state)
 		end
 		else
 		begin
-			
 			start_calc <= 1'b0;
 		end
 	end

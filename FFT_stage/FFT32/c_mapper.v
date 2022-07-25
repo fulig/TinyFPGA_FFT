@@ -4,8 +4,8 @@ module c_mapper #(parameter N=16,
 	input clk,
 	input start,
 	input [$clog2(N/4)-1:0]stage,
-	output dv,
-	output o_we,
+	output reg data_valid,
+	output reg we,
 	output [MSB-1:0] c_out,
 	output [MSB-1:0] cps_out,
 	output [MSB-1:0] cms_out,
@@ -19,8 +19,6 @@ localparam DATA_OUT = 1'b1;
 reg [$clog2(N/2)-1:0] count_data = 0;
 reg [$clog2(N/2)-1:0] stage_data = 0;
 reg [1:0]state = IDLE;
-reg data_valid = 0;
-reg we = 1'b0;
 integer i;
 
 
@@ -98,7 +96,7 @@ case(state)
 			count_data = 0;
 			stage_data = 0;
 			we <= 1'b1;
-			i = stage;
+			//i = stage;
 			state = DATA_OUT;
 		end
 		else 
@@ -124,8 +122,6 @@ case(state)
 endcase // state
 end
 
-assign dv = data_valid;
-assign o_we = we;
 assign addr_out = count_data;
 
 endmodule // c_mapper

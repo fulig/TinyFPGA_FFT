@@ -6,8 +6,7 @@ module fft_spi_out
 	input start_spi,
 	output sclk,
 	output mosi,
-	output cs,
-	output w_tx_ready
+	output cs
 );
 
 localparam IDLE = 2'b00;
