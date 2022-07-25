@@ -12,15 +12,12 @@ module multiplier_8_9Bit
 		);
 
 reg [4:0]count = 5'h00;
-reg [1:0] state;
 reg [16:0] p;
 reg [16:0] t;
 reg [16:0] input_0_exp;
 wire [16:0] w_p;
 wire [16:0] w_t;
 wire [16:0] w_o;
-
-integer i;
 
 N_bit_adder 
 #(.N(17)) Bit_adder
@@ -29,9 +26,6 @@ N_bit_adder
 	.answer(w_o)
 	);
 
-localparam INIT = 2'b00;
-localparam MULT = 2'b01;
-localparam END = 2'b10;
 
 initial begin
 	data_valid <= 1'b0;
@@ -41,41 +35,35 @@ initial begin
 	t [16:0] <= 17'h00000;
 end
 
+reg o_busy = 0;
 
 always @ (posedge clk)
 begin
-	case (state)
-		INIT : 
+	if(!o_busy)
 		begin
-			if(start)
-			begin
 				input_0_exp[16:0] <= {in_0[7], in_0[7], in_0[7], in_0[7],in_0[7], in_0[7],in_0[7],in_0[7],in_0[7], in_0[7:0]};
 				t[16:0] <= {in_1[8],in_1[8],in_1[8],in_1[8],in_1[8],in_1[8],in_1[8],in_1[8],in_1[8:0]};
 				count <= 5'h00;
 				p[16:0] <= 17'h00000;
-				state <= MULT;
-			end
-			else
 				data_valid <= 1'b0;
+				o_busy <= start;
 		end
 
-		MULT :
-		begin
+	else begin
 			if (count == 5'h10)
 			begin
 				out <= p;
 				data_valid <= 1'b1;
-				state <= INIT;
 			end
 			else if (input_0_exp[count] == 1'b1)
 			begin
 				p[16:0] <= w_o[16:0];
 			end
 			t <= t * 2;
+			o_busy <= (count < 5'h10);
 			count <= count + 1'b1;
 		end
 
-	endcase // state
 end
 
 assign w_p[16:0] = p[16:0];
