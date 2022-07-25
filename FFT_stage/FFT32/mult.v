@@ -30,7 +30,6 @@ N_bit_adder
 initial begin
 	data_valid <= 1'b0;
 	count <= 0;
-	state <= INIT;
 	p[16:0] <= 17'h00000;
 	t [16:0] <= 17'h00000;
 end
@@ -59,7 +58,7 @@ begin
 			begin
 				p[16:0] <= w_o[16:0];
 			end
-			t <= t * 2;
+			t <= t << 1;
 			o_busy <= (count < 5'h10);
 			count <= count + 1'b1;
 		end
