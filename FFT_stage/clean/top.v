@@ -86,7 +86,7 @@ cnt = cnt + 1'b1;
 if (cnt == 1)start_all <= 1'b1;
 else start_all <= 1'b0;
 end
-
+//start puls und dann als eingang für
 
 assign PIN_21 = start_spi_in;
 assign start_spi_in = start_all;

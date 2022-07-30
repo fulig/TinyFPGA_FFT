@@ -39,13 +39,13 @@ reg [8:0] W3_cms = 9'h000;
 reg [7:0] zero_im = 8'h00;
 
 reg [7:0] data_0 = 8'h00; 
-reg [7:0] data_1 = 8'h6B;
-reg [7:0] data_2 = 8'h74;
-reg [7:0] data_3 = 8'h12;
-reg [7:0] data_4 = 8'hA0;
-reg [7:0] data_5 = 8'h86;
-reg [7:0] data_6 = 8'hDD;
-reg [7:0] data_7 = 8'h54;
+reg [7:0] data_1 = 8'h52;
+reg [7:0] data_2 = 8'h7E;
+reg [7:0] data_3 = 8'h6E;
+reg [7:0] data_4 = 8'h2B;
+reg [7:0] data_5 = 8'hD5;
+reg [7:0] data_6 = 8'h92;
+reg [7:0] data_7 = 8'h82;
 
 wire [7:0] out_0;
 wire [7:0] out_1;

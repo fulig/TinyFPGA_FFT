@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Fri Jul 29 15:40:59 2022
+[*]
+[dumpfile] "/home/misterdulister/Coding/TinyFPGA_FFT/sim/mult_normal/mult_tb.vcd"
+[dumpfile_mtime] "Fri Jul 29 15:40:27 2022"
+[dumpfile_size] 28911
+[savefile] "/home/misterdulister/Coding/TinyFPGA_FFT/sim/mult_normal/mult_tb.gtkw"
+[timestart] 0
+[size] 1152 617
+[pos] 1973 378
+*-21.000000 2560000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_mult.
+[sst_width] 233
+[signals_width] 110
+[sst_expanded] 1
+[sst_vpaned_height] 150
+@28
+tb_mult.en
+@22
+tb_mult.cnt[8:0]
+@28
+tb_mult.clk
+tb_mult.mult.start
+tb_mult.mult.o_busy
+tb_mult.mult.data_valid
+@420
+tb_mult.mult.in_0[7:0]
+tb_mult.mult.in_1[8:0]
+@421
+tb_mult.mult.out[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

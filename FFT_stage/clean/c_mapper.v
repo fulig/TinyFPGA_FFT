@@ -18,7 +18,6 @@ localparam DATA_OUT = 1'b1;
 reg [$clog2(N/2)-1:0] count_data = 0;
 reg [$clog2(N/2)-1:0] stage_data = 0;
 reg [1:0]state = IDLE;
-reg we = 1'b0;
 integer i;
 
 

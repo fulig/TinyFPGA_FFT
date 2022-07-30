@@ -3,7 +3,6 @@ module shift_reg #(parameter MSB = 8)
 		input d, 
 		input clk,
 		input en,
-		input rst,
 		output reg [MSB-1:0] out
 		);
 

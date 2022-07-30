@@ -1,13 +1,13 @@
 // look in pins.pcf for all the pin names on the TinyFPGA BX board
-module ADC_SPI #(parameter CLKS_PER_HALF_BIT = 2,
-                 parameter NUMBER_OF_BITS = 8)
+module ADC_SPI #(parameter HALF_BIT = 2,
+                 parameter MSB = 8)
     (
     input clk,        // FPGA Clock
     input data_in,         // Data input
     input sample,           // Start getting data
     output reg CS,          // CS
     output reg SCLK,        // SCLK
-    output reg [NUMBER_OF_BITS-1:0] DATA_OUT, // data output
+    output reg [MSB-1:0] DATA_OUT, // data output
     output reg DV           // data valid output
 );
 
@@ -18,13 +18,14 @@ module ADC_SPI #(parameter CLKS_PER_HALF_BIT = 2,
     reg r_case = IDLE;
 
     reg [8:0]count = 9'b0000000; // an parameter anpassen
-    wire [NUMBER_OF_BITS-1:0] w_data_o;
+    wire [MSB-1:0] w_data_o;
 
-    shift_reg shift_out
+    shift_reg #(.MSB(MSB))
+    shift_out
     (   .d(data_in),
         .en(CS),
         .clk(SCLK),
-        .out(w_data_o[NUMBER_OF_BITS-1:0])
+        .out(w_data_o[MSB-1:0])
         );
 
     initial begin
@@ -53,10 +54,10 @@ module ADC_SPI #(parameter CLKS_PER_HALF_BIT = 2,
             begin  
                 if(count > 1)
                     begin
-                    if(count % CLKS_PER_HALF_BIT == 0)
+                    if(count % HALF_BIT == 0)
                         SCLK <= ~SCLK;
                     end
-                if(count == CLKS_PER_HALF_BIT*NUMBER_OF_BITS*2 + CLKS_PER_HALF_BIT*2*2)
+                if(count == HALF_BIT*MSB*2 + HALF_BIT*2*2)
                     begin
                         DV <= 1'b1;
                         CS <= 1'b1;

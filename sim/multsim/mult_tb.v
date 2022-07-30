@@ -8,20 +8,20 @@ parameter DURATION = 1000;
 reg [7:0] count;
 
 reg clk;
-wire [7:0] data_1 = 8'b11111011;
-wire [7:0] data_0 = 8'b00000110;
+reg [7:0] data_0 = 8'b00000110;
+reg [8:0] data_1 = 9'b111111011;
+
 wire [15:0] out;
 
 
 reg start = 1'b0;
 
 
-multiplier_8Bit Bit_mult(
+multiplier_8_9Bit Bit_mult(
 	.clk(clk),
 	.start(start),
-	.input_0(data_0[7:0]),
-	.input_1(data_1[7:0]),
-	.out(out[15:0])
+	.in_0(data_0),
+	.in_1(data_1)
 	);
 
 always #1 clk <= ~clk;

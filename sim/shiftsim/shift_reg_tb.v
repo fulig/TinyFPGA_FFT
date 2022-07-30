@@ -6,32 +6,36 @@ module tb_shift;
 parameter MSB = 16;
 parameter DURATION = 1000;
 
-	reg [15:0]data;
-	reg clk;
-	reg en;
-	wire[MSB-1:0][7:0] out;
-
-shift_16Bit  shift_reg_1(
-	.data(data),
-	.clk(clk),
-	.en(en)
-	);
+reg [7:0] dat = 8'hAB;
+reg [7:0] addr = 0;
+reg data = 0;
+reg clk = 0;
+reg en = 1;
 
 always #1 clk <= ~clk;
 always #1 data <= data + 4'b0111;
 
+shift_reg #(.MSB(8))shift
+(
+	.d(data),
+	.clk(clk),
+	.en(en)
+	);
 
 initial begin
 	clk <= 0;
-	en <= 0;
-	data <= 1;
-	#20 en <= 1;
 
 $dumpfile(`DUMPSTR(`VCD_OUTPUT));
-  $dumpvars(0, shift_reg_1);
+  $dumpvars(0, tb_shift);
 
    #(DURATION) $display("End of simulation");
   $finish;
 end // initial
+
+always @(posedge clk)
+begin
+data <= dat[addr];
+addr <= addr +1'b1;
+end
 
 endmodule // tb_shift
