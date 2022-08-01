@@ -47,14 +47,6 @@ fft_spi_out spi_out
     .cs(PIN_16)
     );
 
-demux #(.MSB(8), .N(2))
-real_imag_demux
-(
-.sel(w_imag),
-.data_in(w_data_in),
-.data_out(w_data_in_fft)
-    );
-
 sampler sampler_tb(
 .clk(CLK),
 .start(start_spi_in),
@@ -98,6 +90,7 @@ else start_all <= 1'b0;
 end
 //start puls und dann als eingang für
 
+assign w_data_in_fft = w_data_in << 8*w_imag;
 assign PIN_21 = start_spi_in;
 assign start_spi_in = start_all;
 endmodule // top
