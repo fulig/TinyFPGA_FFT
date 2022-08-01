@@ -1,9 +1,10 @@
 module sampler
-	#(parameter COUNT_TO=2*4*4*382, 
+	#(parameter COUNT_TO=10, //2*4*4*382
 		parameter N=16)
 	(
 	input clk,
 	input start,
+	output reg imag,
 	output reg sample,
 	output reg run,
 	output [$clog2(N)-1:0]addr
@@ -24,18 +25,20 @@ begin
 			run <= 1'b1;
 			sample <= 1'b1;
 			count_puls <= 0;
+			imag <= 0;
 		end
 	if(run)
 	begin
 	if(count == COUNT_TO)
 	begin
 		sample <= 1'b1;
-		count_puls <= count_puls + 1'b1;
+		imag <= ~imag;
 		count <= 0;
+		if(imag == 1)count_puls <= count_puls + 1'b1;
 	end
 	else
 	begin
-		if(count_puls == N-1 & count == 2)
+		if(count_puls == N-1 & count == COUNT_TO-1 & imag == 1)
 		begin 
 			count_puls <= 0;
 			run <= 1'b0;

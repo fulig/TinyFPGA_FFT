@@ -20,15 +20,17 @@ reg [15:0] count = 0;
 wire w_start_spi;
 
 wire [7:0] w_data_in;
+wire [15:0] w_data_in_fft;
 
 wire [255:0] w_spi_data;
 wire w_insert_data;
+wire w_imag;
 
 fft fft_module
 (
     .clk(CLK),
     .insert_data(w_insert_data),
-    .data_in({8'h00,w_data_in}),
+    .data_in(w_data_in_fft),
     .addr(w_addr),
     .fft_finish(w_start_spi),
     .data_out(w_spi_data)
@@ -45,10 +47,18 @@ fft_spi_out spi_out
     .cs(PIN_16)
     );
 
+demux #(.MSB(8), .N(2))
+real_imag_demux
+(
+.sel(w_imag),
+.data_in(w_data_in),
+.data_out(w_data_in_fft)
+    );
 
 sampler sampler_tb(
 .clk(CLK),
 .start(start_spi_in),
+.imag(w_imag),
 .sample(w_sample),
 .addr(w_addr),
 .run(w_insert_data)
