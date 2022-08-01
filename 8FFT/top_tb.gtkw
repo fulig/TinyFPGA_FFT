@@ -1,0 +1,57 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sun Jul 31 14:04:17 2022
+[*]
+[dumpfile] "/home/misterdulister/Coding/TinyFPGA_FFT/8FFT/top_tb.vcd"
+[dumpfile_mtime] "Sun Jul 31 13:56:57 2022"
+[dumpfile_size] 1669973
+[savefile] "/home/misterdulister/Coding/TinyFPGA_FFT/8FFT/top_tb.gtkw"
+[timestart] 0
+[size] 1920 1163
+[pos] -39 -39
+*-28.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_top.
+[treeopen] tb_top.top_test.
+[treeopen] tb_top.top_test.bf_stage2_0_2.
+[treeopen] tb_top.top_test.bf_stage2_0_2.twid_mult.
+[treeopen] tb_top.top_test.bf_stage3_6_7.
+[sst_width] 233
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 340
+@23
+tb_top.top_test.bf_stage1_0_4.D_im[7:0]
+tb_top.top_test.bf_stage1_0_4.D_re[7:0]
+tb_top.top_test.bf_stage1_0_4.E_im[7:0]
+tb_top.top_test.bf_stage1_0_4.E_re[7:0]
+tb_top.top_test.bf_stage2_0_2.A_im[7:0]
+tb_top.top_test.bf_stage2_0_2.A_re[7:0]
+tb_top.top_test.bf_stage2_0_2.B_im[7:0]
+tb_top.top_test.bf_stage2_0_2.B_re[7:0]
+tb_top.top_test.bf_stage2_0_2.D_im[7:0]
+@421
+tb_top.top_test.bf_stage2_0_2.D_re[7:0]
+@23
+tb_top.top_test.bf_stage2_0_2.E_im[7:0]
+tb_top.top_test.bf_stage2_0_2.E_re[7:0]
+tb_top.top_test.bf_stage2_0_2.twid_mult.adder_E.input1[8:0]
+tb_top.top_test.bf_stage2_0_2.twid_mult.adder_E.input2[8:0]
+@421
+tb_top.top_test.bf_stage2_0_2.twid_mult.multiplier_Z.input_0[7:0]
+@23
+tb_top.top_test.bf_stage2_0_2.twid_mult.multiplier_Z.input_1[8:0]
+tb_top.top_test.bf_stage2_0_2.twid_mult.multiplier_Z.out[16:0]
+tb_top.top_test.bf_stage3_6_7.E_im[7:0]
+tb_top.top_test.bf_stage3_6_7.E_re[7:0]
+tb_top.top_test.bf_stage3_6_7.D_re[7:0]
+tb_top.top_test.bf_stage3_6_7.A_re[7:0]
+tb_top.top_test.bf_stage3_6_7.B_re[7:0]
+@421
+tb_top.top_test.bf_stage3_6_7.D_im[7:0]
+tb_top.top_test.bf_stage3_6_7.adder_D_im.input1[8:0]
+tb_top.top_test.bf_stage3_6_7.adder_D_im.input2[8:0]
+tb_top.top_test.bf_stage3_6_7.adder_D_im.answer[8:0]
+tb_top.top_test.bf_stage3_6_7.A_im[7:0]
+tb_top.top_test.bf_stage3_6_7.B_im[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

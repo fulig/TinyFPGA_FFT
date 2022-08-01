@@ -24,28 +24,28 @@ reg [7:0] W0_c = 8'h7F;
 reg [8:0] W0_cps = 9'h07F;
 reg [8:0] W0_cms = 9'h07F;
 
-reg [7:0] W1_c = 8'h5A; 
+reg [7:0] W1_c = 8'h59; 
 reg [8:0] W1_cps = 9'h000;
-reg [8:0] W1_cms = 9'h0B4;
+reg [8:0] W1_cms = 9'h0B2;
 
 reg [7:0] W2_c = 8'h00;
-reg [8:0] W2_cps = 9'h180;
-reg [8:0] W2_cms = 9'h080;
+reg [8:0] W2_cps = 9'h181;
+reg [8:0] W2_cms = 9'h07F;
 
-reg [7:0] W3_c = 8'hA6;
-reg [8:0] W3_cps = 9'h14C;
+reg [7:0] W3_c = 8'hA7;
+reg [8:0] W3_cps = 9'h14E;
 reg [8:0] W3_cms = 9'h000;
 
 reg [7:0] zero_im = 8'h00;
 
 reg [7:0] data_0 = 8'h00; 
-reg [7:0] data_1 = 8'h52;
-reg [7:0] data_2 = 8'h7E;
-reg [7:0] data_3 = 8'h6E;
-reg [7:0] data_4 = 8'h2B;
-reg [7:0] data_5 = 8'hD5;
-reg [7:0] data_6 = 8'h92;
-reg [7:0] data_7 = 8'h82;
+reg [7:0] data_1 = 8'h4a;
+reg [7:0] data_2 = 8'h7f;
+reg [7:0] data_3 = 8'h00;
+reg [7:0] data_4 = 8'h81;
+reg [7:0] data_5 = 8'hb6;
+reg [7:0] data_6 = 8'h15;
+reg [7:0] data_7 = 8'h00;
 
 wire [7:0] out_0;
 wire [7:0] out_1;
