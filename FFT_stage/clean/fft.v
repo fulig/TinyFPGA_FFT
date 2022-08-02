@@ -86,7 +86,7 @@ case (state)
 	end
 	DATA_IN : 
 	begin
-		if(addr == N-1 | counter_N == N-1)
+		if((addr == N-1 & ~insert_data) | counter_N == N-1)
 		begin
 			start_calc <= 1'b1;
 			state <= CALC_FFT;

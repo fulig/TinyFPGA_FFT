@@ -47,7 +47,7 @@ fft_spi_out spi_out
     .cs(PIN_16)
     );
 
-sampler sampler_tb(
+sampler #(.COUNT_TO(10)) sampler_tb(
 .clk(CLK),
 .start(start_spi_in),
 .imag(w_imag),

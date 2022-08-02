@@ -25,6 +25,7 @@ begin
 			run <= 1'b1;
 			sample <= 1'b1;
 			count_puls <= 0;
+			count <= 0;
 			imag <= 0;
 		end
 	if(run)
@@ -41,6 +42,7 @@ begin
 		if(count_puls == N-1 & count == COUNT_TO-1 & imag == 1)
 		begin 
 			count_puls <= 0;
+
 			run <= 1'b0;
 		end
 		sample <= 1'b0;
