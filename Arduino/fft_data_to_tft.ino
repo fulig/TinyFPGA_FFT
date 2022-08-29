@@ -90,11 +90,8 @@ void loop() {
       }
 
   for(int i = 0; i<N; i++){
-        //tft.fillRect(0,i*bar_width, betrag_old[i], bar_width,  BLACK);
-        //tft.fillRect(0,i*bar_width, betrag[i]    , bar_width,  WHITE);
       tft.drawLine(betrag_old[i], bar_width*i, betrag_old[i], bar_width*(i+1), BLACK);
       tft.drawLine(betrag[i], bar_width*i, betrag[i], bar_width*(i+1), WHITE);
-      //tft.drawLine(100, 0, 100, 480, RED);//Null linie
     }
     
   #endif

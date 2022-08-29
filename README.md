@@ -1,4 +1,4 @@
-# FFT in Verilog for TinyFPGA-BX
+	# FFT in Verilog for TinyFPGA-BX
 
 ## Description
 
@@ -7,6 +7,8 @@ Implementation of a FFT in Verrilog. Written for my bachelor thesis. The FFT is 
 - the folder `8FFT` contains a implementation of the full signalflow-chart of an 8 point FFT.
 
 - Because the iE40 chip on the TinyFPGA Borad is low on resources, an alternative implementation of the FFT was developed. Thereby only one stage of butterflys was implemented. The code for this can be found in the folder `FFT_stage`.
+
+- The output data of the FFT are send out via SPI. For testing and visualizing the results, those data has been send to an arduino (MEGA) with an tft-lcd shield. The Code for this is located in `Arduino`
 
 ## Usage
 
