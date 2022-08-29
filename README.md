@@ -1,4 +1,4 @@
-### FFT in Verilog for TinyFPGA-BX
+# FFT in Verilog for TinyFPGA-BX
 
 ## Description
 
