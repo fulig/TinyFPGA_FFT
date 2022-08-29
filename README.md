@@ -10,4 +10,4 @@ Implementation of a FFT in Verrilog. Written for my bachelor thesis. The FFT is 
 
 ## Usage
 
-The Code has been build for the TinyFPGA-BX. Too load this on the board the tool `apio`is needed. 
+The Code has been build for the TinyFPGA-BX. Too load this on the board the tool `apio`is needed. By entering the folder `8FFt` or `FFT_stage` and run `apio build (-v)` the bitstream can be generated. With `apio upload (-v)` the bitstream can be loaded on the TinyFPGA-BX.
