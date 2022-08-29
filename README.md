@@ -2,7 +2,7 @@
 
 ## Description
 
-Implementation of an FFT into verrilog. Written for my bachelor thesis. 
+Implementation of a FFT in Verrilog. Written for my bachelor thesis. The FFT is built from scratch, so first the arithmetic functions like add/sub and mult were implemented. Based on that, a twiddle multiplier and a butterfly processor has been realised.
 
 - the folder `8FFT` contains a implementation of the full signalflow-chart of an 8 point FFT.
 
