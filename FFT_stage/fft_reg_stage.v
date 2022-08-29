@@ -3,7 +3,6 @@ module fft_reg_stage #(parameter N=16,
 (
 	input clk,
 	input fill_regs,
-	input we_regs,
 	input start_calc,
 	input [MSB-1:0] data_in,
 	input [$clog2(N)-1:0] addr_counter,
@@ -12,7 +11,7 @@ module fft_reg_stage #(parameter N=16,
 	output calc_finish
 	);
 
-wire w_dv_mapper;
+
 wire w_we_c_map;
 wire [MSB-1:0]w_c_in;
 wire [MSB-1:0]w_cps_in;
@@ -56,8 +55,7 @@ c_mapper #(.N(N)) c_map
 	.clk(clk),
 	.start(fill_regs),
 	.stage(stage),
-	.dv(w_dv_mapper),
-	.o_we(w_we_c_map),
+	.we(w_we_c_map),
 	.c_out(w_c_in),
 	.cps_out(w_cps_in),
 	.cms_out(w_cms_in),
@@ -69,7 +67,6 @@ wire [N*MSB-1:0]  w_input_regs;
 reg_array #(.N(N)) input_regs
 (
 	.clk(clk),
-	.we(1'b1),
 	.addr(w_index_out),
 	.data(data_in),
 	.data_out(w_input_regs)
