@@ -1,2 +1,5 @@
-# TinyFPGA_FFT
-Digital Design of an FFT on the TinyFPGA. Using a ADC141S626 as input.
+### FFT in Verilog for TinyFPGA-BX
+
+## Description
+
+Digital Design of a small FFT-implementation. Optimized for the TinyFPGA-BX. Contains modules of the arithemtic functions. 
